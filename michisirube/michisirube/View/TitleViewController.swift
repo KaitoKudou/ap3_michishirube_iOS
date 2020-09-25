@@ -22,6 +22,9 @@ class TitleViewController: UIViewController {
     }
     
     @IBAction func NavigationButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "NaviEmotionSelect", bundle: nil)
+        let naviEmotionSelectViewController = storyboard.instantiateViewController(identifier: "NaviEmotionSelectViewController") as NaviEmotionSelectViewController
+        self.navigationController?.pushViewController(naviEmotionSelectViewController, animated: true)
     }
     
     @IBAction func SpotListButton(_ sender: Any) {
