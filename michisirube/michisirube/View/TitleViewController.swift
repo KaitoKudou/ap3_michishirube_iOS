@@ -13,8 +13,13 @@ class TitleViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.setBackground(name: "Background")
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     
     @IBAction func NavigationButton(_ sender: Any) {
     }
