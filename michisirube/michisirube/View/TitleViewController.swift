@@ -14,4 +14,12 @@ class TitleViewController: UIViewController {
         
         self.view.setBackground(name: "Background")
     }
+    
+    
+    @IBAction func NavigationButton(_ sender: Any) {
+    }
+    
+    @IBAction func SpotListButton(_ sender: Any) {
+    }
+    
 }

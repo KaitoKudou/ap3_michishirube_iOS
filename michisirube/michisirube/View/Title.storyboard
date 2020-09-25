@@ -23,11 +23,17 @@
                                 <rect key="frame" x="113" y="653" width="188" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SpotListButton"/>
+                                <connections>
+                                    <action selector="SpotListButton:" destination="kDx-XT-iv0" eventType="touchUpInside" id="MfJ-iw-K9H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzE-v6-pKO">
                                 <rect key="frame" x="54" y="558" width="307" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="NavigationButton"/>
+                                <connections>
+                                    <action selector="NavigationButton:" destination="kDx-XT-iv0" eventType="touchUpInside" id="zjy-cY-rwL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
