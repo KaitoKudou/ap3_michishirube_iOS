@@ -2,7 +2,7 @@ name: michisirube
 options:
   bundleIdPrefix: com.icloud.kaitokudou2468110921
 targets:
-  MichisirubeApplication:
+  michisirube:
     type: application
     platform: iOS
     sources: michisirube
