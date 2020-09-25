@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_MichisirubeApplicationVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MichisirubeApplicationVersionString[];
+FOUNDATION_EXPORT double Pods_michisirubeVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_michisirubeVersionString[];
 
