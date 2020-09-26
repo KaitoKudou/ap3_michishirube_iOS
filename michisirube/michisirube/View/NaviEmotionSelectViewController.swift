@@ -24,6 +24,9 @@ class NaviEmotionSelectViewController: UIViewController {
     // 他のボタンを押すと押しても現状は何も起きない
     // モック通り、怒りのボタン
     @IBAction func angryButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "NaviTimeSelect", bundle: nil)
+        let naviTimeSelectViewController = storyboard.instantiateViewController(identifier: "NaviTimeSelectViewController") as NaviTimeSelectViewController
+        self.navigationController?.pushViewController(naviTimeSelectViewController, animated: true)
     }
     
     
