@@ -9,21 +9,21 @@ import UIKit
 
 class NaviTimeSelectViewController: UIViewController {
 
+    @IBOutlet weak var timeRequiredPicker: UIDatePicker!
+    
+    @IBOutlet weak var detailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.setBackground(name: "Background")
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        // NavigationBarを透明化
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        timeRequiredPicker.setValue(UIColor.white, forKey: "textColor")
+        detailLabel.textColor = UIColor.white
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
