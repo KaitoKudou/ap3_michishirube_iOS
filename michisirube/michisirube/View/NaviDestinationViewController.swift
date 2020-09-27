@@ -30,7 +30,9 @@ class NaviDestinationViewController: UIViewController {
     
     
     @IBAction func NaviDestinationDecision(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "NaviNavigating", bundle: nil)
+        let naviNavigatingViewController = storyboard.instantiateViewController(identifier: "NaviNavigatingViewController") as NaviNavigatingViewController
+        self.navigationController?.pushViewController(naviNavigatingViewController, animated: true)
     }
     
 
