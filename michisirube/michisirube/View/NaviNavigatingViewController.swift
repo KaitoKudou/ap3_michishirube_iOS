@@ -20,5 +20,11 @@ class NaviNavigatingViewController: UIViewController {
     }
 
 
-
+    @IBAction func test(_ sender: Any) {
+        //画面遷移の確認するようのテストボタンです
+        let storyboard = UIStoryboard(name: "NaviEvaluation", bundle: nil)
+        let naviEvaluationViewController = storyboard.instantiateViewController(identifier: "NaviEvaluationViewController") as NaviEvaluationViewController
+        self.navigationController?.pushViewController(naviEvaluationViewController, animated: true)
+    }
+    
 }
