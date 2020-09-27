@@ -26,4 +26,9 @@ class NaviTimeSelectViewController: UIViewController {
         detailLabel.textColor = UIColor.white
     }
 
+    @IBAction func NaviTimeSelectDecision(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "NaviDestination", bundle: nil)
+        let naviDestinationViewController = storyboard.instantiateViewController(identifier: "NaviDestinationViewController") as NaviDestinationViewController
+        self.navigationController?.pushViewController(naviDestinationViewController, animated: true)
+    }
 }
