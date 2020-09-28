@@ -28,6 +28,9 @@ class TitleViewController: UIViewController {
     }
     
     @IBAction func SpotListButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "NaviSpotList", bundle: nil)
+        let naviSpotListViewController = storyboard.instantiateViewController(identifier: "NaviSpotListViewController") as NaviSpotListViewController
+        self.navigationController?.pushViewController(naviSpotListViewController, animated: true)
     }
     
 }
