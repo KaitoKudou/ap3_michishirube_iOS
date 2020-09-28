@@ -13,4 +13,9 @@ class NaviTimeSelectPresenter {
     func sendTimeRequired() {
         
     }
+    
+    // UIDatePickerViewから時間と分を取得
+    func format(date: Date) {
+        
+    }
 }
