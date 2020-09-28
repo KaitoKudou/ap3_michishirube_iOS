@@ -9,4 +9,8 @@ import Foundation
 
 class NaviEmotionSelectPresenter {
     
+    // サーバに感情のデータを送る
+    func sendEmotionData() {
+        
+    }
 }

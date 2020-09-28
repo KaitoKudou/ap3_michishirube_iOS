@@ -9,4 +9,8 @@ import Foundation
 
 class NaviDestinationPresenter {
     
+    // サーバーから目的地のリストを受け取る
+    func getDestinationList() {
+        
+    }
 }

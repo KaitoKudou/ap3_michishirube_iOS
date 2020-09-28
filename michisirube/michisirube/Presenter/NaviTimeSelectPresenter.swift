@@ -9,4 +9,8 @@ import Foundation
 
 class NaviTimeSelectPresenter {
     
+    // 所要時間をサーバに送る
+    func sendTimeRequired() {
+        
+    }
 }

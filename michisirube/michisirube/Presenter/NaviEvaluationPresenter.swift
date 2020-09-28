@@ -9,4 +9,8 @@ import Foundation
 
 class NaviEvaluationPresenter {
     
+    // 目的地の評価結果をサーバに送る
+    func sendEvaluationResult() {
+        
+    }
 }
