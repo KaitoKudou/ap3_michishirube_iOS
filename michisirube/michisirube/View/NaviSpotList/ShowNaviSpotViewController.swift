@@ -8,22 +8,43 @@
 import UIKit
 
 class ShowNaviSpotViewController: UIViewController {
-
+    
+    @IBOutlet weak var naviSpotTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.setBackground(name: "Background")
+        
+        let image = UIImage(named: "Background")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.naviSpotTableView.frame.width, height: self.naviSpotTableView.frame.height))
+        imageView.image = image
+        naviSpotTableView.backgroundView = imageView
+        
+        naviSpotTableView.dataSource = self
+        naviSpotTableView.delegate = self
+        naviSpotTableView.register(UINib(nibName: "NaviSpotListTableViewCell", bundle: nil), forCellReuseIdentifier: "NaviSpotListTableViewCell")
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ShowNaviSpotViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = naviSpotTableView.dequeueReusableCell(withIdentifier: "NaviSpotListTableViewCell", for: indexPath) as! NaviSpotListTableViewCell
+        
+        return cell
+    }
+}
 
+extension ShowNaviSpotViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        tableView.estimatedRowHeight = 5
+        return 180
+    }
 }
