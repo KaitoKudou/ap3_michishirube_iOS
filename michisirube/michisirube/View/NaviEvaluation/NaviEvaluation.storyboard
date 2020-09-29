@@ -14,7 +14,45 @@
                     <view key="view" contentMode="scaleToFill" id="vkO-88-vjb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="us6-KK-281">
+                                <rect key="frame" x="147" y="300" width="120" height="120"/>
+                                <state key="normal" image="NaviEvaluation_good"/>
+                                <connections>
+                                    <action selector="evaluationGoodButton:" destination="0Ma-PH-SpN" eventType="touchUpInside" id="oNJ-Sn-Qxz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-rQ-RQ1">
+                                <rect key="frame" x="147" y="561" width="120" height="120"/>
+                                <state key="normal" image="NaviEvaluation_bad"/>
+                                <connections>
+                                    <action selector="evaluationBadButton:" destination="0Ma-PH-SpN" eventType="touchUpInside" id="BV0-vG-SX0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="気に入らなかった" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-Yh-x4d">
+                                <rect key="frame" x="137.5" y="701" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="気に入った" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXf-VE-tBT">
+                                <rect key="frame" x="163.5" y="440" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CCY-Yh-x4d" firstAttribute="top" secondItem="8KJ-rQ-RQ1" secondAttribute="bottom" constant="20" id="0Wd-Ae-pqE"/>
+                            <constraint firstItem="NXf-VE-tBT" firstAttribute="top" secondItem="us6-KK-281" secondAttribute="bottom" constant="20" id="6yD-YO-lE0"/>
+                            <constraint firstItem="3db-J5-OOa" firstAttribute="bottom" secondItem="CCY-Yh-x4d" secondAttribute="bottom" constant="140" id="FzV-UC-riY"/>
+                            <constraint firstItem="8KJ-rQ-RQ1" firstAttribute="top" secondItem="NXf-VE-tBT" secondAttribute="bottom" constant="100" id="JL7-Er-cvq"/>
+                            <constraint firstItem="NXf-VE-tBT" firstAttribute="centerX" secondItem="vkO-88-vjb" secondAttribute="centerX" id="Khr-rI-oRi"/>
+                            <constraint firstItem="CCY-Yh-x4d" firstAttribute="centerX" secondItem="vkO-88-vjb" secondAttribute="centerX" id="LVk-CW-N2l"/>
+                            <constraint firstItem="us6-KK-281" firstAttribute="centerX" secondItem="vkO-88-vjb" secondAttribute="centerX" id="OaW-pb-8JH"/>
+                            <constraint firstItem="8KJ-rQ-RQ1" firstAttribute="centerX" secondItem="vkO-88-vjb" secondAttribute="centerX" id="oaW-97-EcQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3db-J5-OOa"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZKf-5F-DoY"/>
@@ -42,4 +80,8 @@
             <point key="canvasLocation" x="102.89855072463769" y="72.991071428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NaviEvaluation_bad" width="120" height="120"/>
+        <image name="NaviEvaluation_good" width="120" height="120"/>
+    </resources>
 </document>

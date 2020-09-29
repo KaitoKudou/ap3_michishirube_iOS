@@ -12,7 +12,19 @@ class NaviEvaluationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.view.setBackground(name: "Background")
+        navigationController?.setNavigationBarHidden(false, animated: true)
+
+        // NavigationBarを透明化
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    @IBAction func evaluationGoodButton(_ sender: Any) {
+    }
+    
+    @IBAction func evaluationBadButton(_ sender: Any) {
     }
     
 }
+
