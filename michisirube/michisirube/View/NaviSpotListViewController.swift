@@ -20,6 +20,4 @@ class NaviSpotListViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
     }
 
-    @IBAction func addSpotButton(_ sender: Any) {
-    }
 }
