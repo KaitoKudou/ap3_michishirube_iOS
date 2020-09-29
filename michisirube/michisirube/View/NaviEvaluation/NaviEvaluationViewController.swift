@@ -27,4 +27,3 @@ class NaviEvaluationViewController: UIViewController {
     }
     
 }
-
