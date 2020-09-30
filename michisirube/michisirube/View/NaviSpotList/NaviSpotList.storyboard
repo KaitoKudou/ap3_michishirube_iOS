@@ -27,6 +27,9 @@
                                 <rect key="frame" x="299" y="782" width="91" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="AddList"/>
+                                <connections>
+                                    <action selector="spotRegisterScreenTransitionButton:" destination="XTy-uV-qaR" eventType="touchUpInside" id="QRv-1M-BX3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
