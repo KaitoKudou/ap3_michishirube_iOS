@@ -19,5 +19,12 @@ class NaviSpotListViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
     }
-
+    
+    @IBAction func spotRegisterScreenTransitionButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "NaviSpotRegister", bundle: nil)
+        let naviSpotRegisterViewController = storyboard.instantiateViewController(identifier: "NaviSpotRegisterViewController") as NaviSpotRegisterViewController
+        //self.navigationController?.pushViewController(naviSpotRegisterViewController, animated: true)
+        self.present(naviSpotRegisterViewController, animated: true, completion: nil)
+    }
+    
 }
