@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wSf-4w-gWG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wSf-4w-gWG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -76,16 +76,27 @@
                                 <rect key="frame" x="283" y="636" width="17" height="22"/>
                                 <state key="normal" image="arrowtriangle.down" catalog="system"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RN6-Ib-VTJ">
+                                <rect key="frame" x="132" y="793" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZH8-Fh-mSM"/>
+                                    <constraint firstAttribute="width" constant="150" id="eX5-aU-TMl"/>
+                                </constraints>
+                                <state key="normal" title="スポット登録"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5Ya-dw-27P" firstAttribute="leading" secondItem="Dxu-sR-Llg" secondAttribute="leading" constant="100" id="25c-6A-Xzo"/>
+                            <constraint firstItem="Dxu-sR-Llg" firstAttribute="trailing" secondItem="RN6-Ib-VTJ" secondAttribute="trailing" constant="132" id="3OE-OH-dc7"/>
+                            <constraint firstItem="RN6-Ib-VTJ" firstAttribute="leading" secondItem="Dxu-sR-Llg" secondAttribute="leading" constant="132" id="Cxd-ya-CPe"/>
                             <constraint firstItem="b0B-q8-YrF" firstAttribute="top" secondItem="vwd-qW-Yp4" secondAttribute="bottom" constant="70" id="D2l-cd-sJf"/>
                             <constraint firstItem="Dxu-sR-Llg" firstAttribute="trailing" secondItem="vwd-qW-Yp4" secondAttribute="trailing" constant="100" id="EW0-BS-95M"/>
                             <constraint firstItem="5qK-pc-JcO" firstAttribute="top" secondItem="5Ya-dw-27P" secondAttribute="bottom" constant="70" id="GPP-tC-0mt"/>
                             <constraint firstItem="5qK-pc-JcO" firstAttribute="leading" secondItem="Dxu-sR-Llg" secondAttribute="leading" constant="100" id="KsT-ce-02K"/>
                             <constraint firstItem="Dxu-sR-Llg" firstAttribute="trailing" secondItem="jfA-7O-6ji" secondAttribute="trailing" constant="144" id="LXb-aq-ABg"/>
                             <constraint firstItem="5Ya-dw-27P" firstAttribute="top" secondItem="b0B-q8-YrF" secondAttribute="bottom" constant="10" id="Lf9-H7-Rpu"/>
+                            <constraint firstItem="RN6-Ib-VTJ" firstAttribute="top" secondItem="1vs-es-aC6" secondAttribute="bottom" constant="16" id="R1d-rq-8Id"/>
                             <constraint firstItem="Dxu-sR-Llg" firstAttribute="bottom" secondItem="1vs-es-aC6" secondAttribute="bottom" constant="85" id="RLp-ED-NqE"/>
                             <constraint firstItem="1vs-es-aC6" firstAttribute="leading" secondItem="Dxu-sR-Llg" secondAttribute="leading" constant="100" id="UBZ-Fe-ZG9"/>
                             <constraint firstItem="jfA-7O-6ji" firstAttribute="top" secondItem="Dxu-sR-Llg" secondAttribute="top" constant="155" id="Vr1-SN-cf2"/>
@@ -109,6 +120,7 @@
                             <constraint firstItem="jfA-7O-6ji" firstAttribute="leading" secondItem="Dxu-sR-Llg" secondAttribute="leading" constant="145" id="rlH-wu-6m2"/>
                             <constraint firstItem="Dxu-sR-Llg" firstAttribute="trailing" secondItem="5Ya-dw-27P" secondAttribute="trailing" constant="100" id="tlY-x0-s8Y"/>
                             <constraint firstItem="Dxu-sR-Llg" firstAttribute="trailing" secondItem="5qK-pc-JcO" secondAttribute="trailing" constant="279" id="vhp-7n-Cgg"/>
+                            <constraint firstItem="Dxu-sR-Llg" firstAttribute="bottom" secondItem="RN6-Ib-VTJ" secondAttribute="bottom" constant="19" id="vte-z0-Nqt"/>
                             <constraint firstItem="vwd-qW-Yp4" firstAttribute="top" secondItem="0Dh-aq-yN2" secondAttribute="bottom" constant="10" id="vuC-vq-61O"/>
                             <constraint firstItem="poz-Wx-2Mk" firstAttribute="leading" secondItem="Dxu-sR-Llg" secondAttribute="leading" constant="40" id="yAG-Fh-eWP"/>
                             <constraint firstItem="Dxu-sR-Llg" firstAttribute="trailing" secondItem="0Dh-aq-yN2" secondAttribute="trailing" constant="279" id="zRH-8K-4gq"/>
