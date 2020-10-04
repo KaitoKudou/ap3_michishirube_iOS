@@ -11,7 +11,7 @@ import MapKit
 class NaviDestinationViewController: UIViewController {
 
     @IBOutlet weak var destinationView: UIView!
-    //緯度経度
+    //五稜郭の緯度経度
     let latitude = "41.796771"
     let longitude = "140.757028"
     var urlString: String! = nil
@@ -43,13 +43,11 @@ class NaviDestinationViewController: UIViewController {
         //Googleマップに遷移，もしGoogleマップのアプリがインストールされていなければ既存のマップアプリを起動する
         if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
             urlString = "comgooglemaps://?daddr=\(latitude),\(longitude)&directionsmode=walking&zoom=14"
-            }
-        else {
+        } else {
             urlString = "http://maps.apple.com/?daddr=\(latitude),\(longitude)&dirflg=w"
-            }
-        if let url = URL(string: urlString) {
-            UIApplication.shared.open(url)
-            }
+        }
+        guard let url = URL(string: urlString) else { return }
+        UIApplication.shared.open(url)
         UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)
     }
     
