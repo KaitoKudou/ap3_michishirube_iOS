@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1bi-sc-iIh">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,38 +15,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvI-9z-N82">
-                                <rect key="frame" x="113" y="653" width="188" height="67"/>
-                                <state key="normal" image="SpotListButton"/>
-                                <connections>
-                                    <action selector="SpotListButton:" destination="kDx-XT-iv0" eventType="touchUpInside" id="MfJ-iw-K9H"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-top" translatesAutoresizingMaskIntoConstraints="NO" id="lfz-Ia-ehR">
+                                <rect key="frame" x="62" y="128" width="290" height="375"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzE-v6-pKO">
-                                <rect key="frame" x="54" y="542" width="307" height="67"/>
+                                <rect key="frame" x="52" y="558" width="310" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="s1b-BH-Kmc"/>
+                                    <constraint firstAttribute="height" constant="67" id="wtb-7s-9CA"/>
+                                </constraints>
                                 <state key="normal" image="NavigationButton"/>
                                 <connections>
                                     <action selector="NavigationButton:" destination="kDx-XT-iv0" eventType="touchUpInside" id="zjy-cY-rwL"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lfz-Ia-ehR">
-                                <rect key="frame" x="97" y="235" width="221" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvI-9z-N82">
+                                <rect key="frame" x="52" y="655" width="310" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="NL5-Tc-T1V"/>
+                                    <constraint firstAttribute="width" constant="310" id="A4i-af-wGT"/>
+                                    <constraint firstAttribute="height" constant="67" id="rFd-12-fFe"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="SpotListButton"/>
+                                <connections>
+                                    <action selector="SpotListButton:" destination="kDx-XT-iv0" eventType="touchUpInside" id="MfJ-iw-K9H"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lfz-Ia-ehR" firstAttribute="leading" secondItem="lJk-cg-kRK" secondAttribute="leading" constant="97" id="3JD-9p-y2E"/>
-                            <constraint firstItem="lJk-cg-kRK" firstAttribute="trailing" secondItem="NzE-v6-pKO" secondAttribute="trailing" constant="53" id="Tdo-G0-RLI"/>
-                            <constraint firstItem="OvI-9z-N82" firstAttribute="top" secondItem="NzE-v6-pKO" secondAttribute="bottom" constant="44" id="WBL-jy-YQr"/>
-                            <constraint firstItem="lfz-Ia-ehR" firstAttribute="centerX" secondItem="NzE-v6-pKO" secondAttribute="centerX" id="YP8-nj-qtE"/>
-                            <constraint firstItem="lJk-cg-kRK" firstAttribute="bottom" secondItem="OvI-9z-N82" secondAttribute="bottom" constant="142" id="ZNa-HJ-MbE"/>
-                            <constraint firstItem="lfz-Ia-ehR" firstAttribute="top" secondItem="lJk-cg-kRK" secondAttribute="top" constant="147" id="agc-jO-xg2"/>
-                            <constraint firstItem="NzE-v6-pKO" firstAttribute="leading" secondItem="lJk-cg-kRK" secondAttribute="leading" constant="54" id="gUf-Y3-YLE"/>
-                            <constraint firstItem="OvI-9z-N82" firstAttribute="leading" secondItem="lJk-cg-kRK" secondAttribute="leading" constant="113" id="hAc-ca-HsZ"/>
-                            <constraint firstItem="lJk-cg-kRK" firstAttribute="trailing" secondItem="OvI-9z-N82" secondAttribute="trailing" constant="113" id="mN3-VO-s7U"/>
+                            <constraint firstItem="lJk-cg-kRK" firstAttribute="trailing" secondItem="OvI-9z-N82" secondAttribute="trailing" constant="52" id="89i-gC-Njh"/>
+                            <constraint firstItem="lfz-Ia-ehR" firstAttribute="top" secondItem="lJk-cg-kRK" secondAttribute="top" constant="40" id="Ea0-4j-CJ9"/>
+                            <constraint firstItem="lJk-cg-kRK" firstAttribute="trailing" secondItem="NzE-v6-pKO" secondAttribute="trailing" constant="52" id="K4J-Hy-tHY"/>
+                            <constraint firstItem="lfz-Ia-ehR" firstAttribute="leading" secondItem="lJk-cg-kRK" secondAttribute="leading" constant="62" id="Vq6-yg-R7l"/>
+                            <constraint firstItem="lJk-cg-kRK" firstAttribute="trailing" secondItem="lfz-Ia-ehR" secondAttribute="trailing" constant="62" id="ZBh-nH-Of4"/>
+                            <constraint firstItem="NzE-v6-pKO" firstAttribute="top" secondItem="lfz-Ia-ehR" secondAttribute="bottom" constant="55" id="bvU-9w-gSD"/>
+                            <constraint firstItem="OvI-9z-N82" firstAttribute="top" secondItem="NzE-v6-pKO" secondAttribute="bottom" constant="30" id="nTo-DY-Gwl"/>
+                            <constraint firstItem="OvI-9z-N82" firstAttribute="leading" secondItem="lJk-cg-kRK" secondAttribute="leading" constant="52" id="w0v-JD-LFg"/>
+                            <constraint firstItem="NzE-v6-pKO" firstAttribute="leading" secondItem="lJk-cg-kRK" secondAttribute="leading" constant="52" id="xCE-CC-X5v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lJk-cg-kRK"/>
                     </view>
@@ -76,8 +81,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="2863" height="891"/>
+        <image name="Logo-top" width="288" height="375"/>
         <image name="NavigationButton" width="284" height="67"/>
-        <image name="SpotListButton" width="181" height="67"/>
+        <image name="SpotListButton" width="285" height="67"/>
     </resources>
 </document>
