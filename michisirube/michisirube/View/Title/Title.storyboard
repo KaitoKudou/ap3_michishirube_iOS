@@ -15,28 +15,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lfz-Ia-ehR">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvI-9z-N82">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvI-9z-N82">
                                 <rect key="frame" x="113" y="653" width="188" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SpotListButton"/>
                                 <connections>
                                     <action selector="SpotListButton:" destination="kDx-XT-iv0" eventType="touchUpInside" id="MfJ-iw-K9H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzE-v6-pKO">
-                                <rect key="frame" x="54" y="558" width="307" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzE-v6-pKO">
+                                <rect key="frame" x="54" y="542" width="307" height="67"/>
                                 <state key="normal" image="NavigationButton"/>
                                 <connections>
                                     <action selector="NavigationButton:" destination="kDx-XT-iv0" eventType="touchUpInside" id="zjy-cY-rwL"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lfz-Ia-ehR">
+                                <rect key="frame" x="97" y="235" width="221" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="NL5-Tc-T1V"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lfz-Ia-ehR" firstAttribute="leading" secondItem="lJk-cg-kRK" secondAttribute="leading" constant="97" id="3JD-9p-y2E"/>
+                            <constraint firstItem="lJk-cg-kRK" firstAttribute="trailing" secondItem="NzE-v6-pKO" secondAttribute="trailing" constant="53" id="Tdo-G0-RLI"/>
+                            <constraint firstItem="OvI-9z-N82" firstAttribute="top" secondItem="NzE-v6-pKO" secondAttribute="bottom" constant="44" id="WBL-jy-YQr"/>
+                            <constraint firstItem="lfz-Ia-ehR" firstAttribute="centerX" secondItem="NzE-v6-pKO" secondAttribute="centerX" id="YP8-nj-qtE"/>
+                            <constraint firstItem="lJk-cg-kRK" firstAttribute="bottom" secondItem="OvI-9z-N82" secondAttribute="bottom" constant="142" id="ZNa-HJ-MbE"/>
+                            <constraint firstItem="lfz-Ia-ehR" firstAttribute="top" secondItem="lJk-cg-kRK" secondAttribute="top" constant="147" id="agc-jO-xg2"/>
+                            <constraint firstItem="NzE-v6-pKO" firstAttribute="leading" secondItem="lJk-cg-kRK" secondAttribute="leading" constant="54" id="gUf-Y3-YLE"/>
+                            <constraint firstItem="OvI-9z-N82" firstAttribute="leading" secondItem="lJk-cg-kRK" secondAttribute="leading" constant="113" id="hAc-ca-HsZ"/>
+                            <constraint firstItem="lJk-cg-kRK" firstAttribute="trailing" secondItem="OvI-9z-N82" secondAttribute="trailing" constant="113" id="mN3-VO-s7U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lJk-cg-kRK"/>
                     </view>
                     <navigationItem key="navigationItem" id="OkI-tD-gq6"/>
