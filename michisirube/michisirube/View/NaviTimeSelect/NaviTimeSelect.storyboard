@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WVn-6e-2h2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WVn-6e-2h2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,27 +15,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="10" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nR5-ig-7QG">
-                                <rect key="frame" x="0.0" y="323" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="10" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nR5-ig-7QG">
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky8-QU-MXC">
-                                <rect key="frame" x="152" y="666" width="113" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky8-QU-MXC">
+                                <rect key="frame" x="150.5" y="666" width="113" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aGp-q6-mtP"/>
+                                </constraints>
                                 <state key="normal" image="TimeSelect"/>
                                 <connections>
                                     <action selector="NaviTimeSelectDecision:" destination="jQr-vK-fH5" eventType="touchUpInside" id="EoE-Xj-PKY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="所要時間を設定してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h9-3n-uPW">
-                                <rect key="frame" x="52" y="177" width="226" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所要時間を設定してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h9-3n-uPW">
+                                <rect key="frame" x="94" y="219" width="226" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ky8-QU-MXC" firstAttribute="top" secondItem="nR5-ig-7QG" secondAttribute="bottom" constant="110" id="1he-fV-1H1"/>
+                            <constraint firstItem="nR5-ig-7QG" firstAttribute="top" secondItem="5h9-3n-uPW" secondAttribute="bottom" constant="100" id="I23-c0-YBC"/>
+                            <constraint firstItem="nR5-ig-7QG" firstAttribute="centerY" secondItem="q42-jG-8FG" secondAttribute="centerY" id="Nyb-uI-Faw"/>
+                            <constraint firstItem="nR5-ig-7QG" firstAttribute="centerX" secondItem="q42-jG-8FG" secondAttribute="centerX" id="OYl-ZG-DKe"/>
+                            <constraint firstItem="5h9-3n-uPW" firstAttribute="centerX" secondItem="q42-jG-8FG" secondAttribute="centerX" id="VB0-FV-r3Q"/>
+                            <constraint firstItem="ky8-QU-MXC" firstAttribute="centerX" secondItem="q42-jG-8FG" secondAttribute="centerX" id="hbK-sI-BkG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bLz-JO-WAV"/>
                     </view>
                     <navigationItem key="navigationItem" id="KlU-mE-Rei"/>
