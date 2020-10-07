@@ -15,9 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryl-iV-qzi">
-                                <rect key="frame" x="192" y="720" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryl-iV-qzi">
+                                <rect key="frame" x="192" y="712" width="30" height="30"/>
                                 <state key="normal" title="test"/>
                                 <connections>
                                     <action selector="test:" destination="IgH-7c-ZBm" eventType="touchUpInside" id="ofe-Jd-dxO"/>
@@ -53,10 +52,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="nNU-hw-03R" firstAttribute="bottom" secondItem="Ryl-iV-qzi" secondAttribute="bottom" constant="120" id="6HY-TX-7RD"/>
                             <constraint firstItem="Ra7-4t-vhA" firstAttribute="centerY" secondItem="eSu-WD-006" secondAttribute="centerY" id="B8n-HH-J5r"/>
+                            <constraint firstItem="nNU-hw-03R" firstAttribute="trailing" secondItem="Ryl-iV-qzi" secondAttribute="trailing" constant="192" id="DE7-HQ-A0B"/>
                             <constraint firstItem="nNU-hw-03R" firstAttribute="trailing" secondItem="Ra7-4t-vhA" secondAttribute="trailing" constant="70" id="DQM-Nv-C55"/>
                             <constraint firstItem="Ra7-4t-vhA" firstAttribute="centerX" secondItem="eSu-WD-006" secondAttribute="centerX" id="TWr-gk-PWb"/>
                             <constraint firstItem="Ra7-4t-vhA" firstAttribute="leading" secondItem="nNU-hw-03R" secondAttribute="leading" constant="70" id="bEb-MK-lLf"/>
+                            <constraint firstItem="Ryl-iV-qzi" firstAttribute="leading" secondItem="nNU-hw-03R" secondAttribute="leading" constant="192" id="yup-Rc-tjt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nNU-hw-03R"/>
                     </view>
