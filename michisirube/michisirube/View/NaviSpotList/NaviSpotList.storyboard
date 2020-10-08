@@ -15,17 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-iP-oyZ">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-iP-oyZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="odm-4g-OqS" kind="embed" id="vfz-zv-p6T"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUv-01-ZkJ">
-                                <rect key="frame" x="299" y="782" width="91" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUv-01-ZkJ">
+                                <rect key="frame" x="300" y="780" width="89" height="91"/>
                                 <state key="normal" image="AddList"/>
                                 <connections>
                                     <action selector="spotRegisterScreenTransitionButton:" destination="XTy-uV-qaR" eventType="touchUpInside" id="QRv-1M-BX3"/>
@@ -33,6 +31,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vm7-iP-oyZ" firstAttribute="leading" secondItem="6rm-e4-0Ob" secondAttribute="leading" id="14r-Ji-zRU"/>
+                            <constraint firstItem="6rm-e4-0Ob" firstAttribute="trailing" secondItem="nUv-01-ZkJ" secondAttribute="trailing" constant="25" id="5cR-Wj-Nfj"/>
+                            <constraint firstItem="vm7-iP-oyZ" firstAttribute="trailing" secondItem="6rm-e4-0Ob" secondAttribute="trailing" id="90o-xT-I9J"/>
+                            <constraint firstItem="nUv-01-ZkJ" firstAttribute="leading" secondItem="6rm-e4-0Ob" secondAttribute="leading" constant="300" id="DgX-OY-7JP"/>
+                            <constraint firstAttribute="bottom" secondItem="nUv-01-ZkJ" secondAttribute="bottom" constant="25" id="MbX-7V-Cjm"/>
+                            <constraint firstItem="vm7-iP-oyZ" firstAttribute="top" secondItem="6rm-e4-0Ob" secondAttribute="top" id="O3m-92-T5r"/>
+                            <constraint firstAttribute="bottom" secondItem="vm7-iP-oyZ" secondAttribute="bottom" id="m2u-SK-C4k"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6rm-e4-0Ob"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Om-XV-akV"/>
@@ -67,13 +74,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HlT-Bi-IN5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HlT-Bi-IN5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HlT-Bi-IN5" firstAttribute="leading" secondItem="sEZ-MZ-dSl" secondAttribute="leading" id="JOm-G8-X61"/>
+                            <constraint firstItem="HlT-Bi-IN5" firstAttribute="top" secondItem="sEZ-MZ-dSl" secondAttribute="top" id="PGE-B3-9P5"/>
+                            <constraint firstItem="HlT-Bi-IN5" firstAttribute="bottom" secondItem="sEZ-MZ-dSl" secondAttribute="bottom" id="ZUD-xe-QSI"/>
+                            <constraint firstItem="HlT-Bi-IN5" firstAttribute="trailing" secondItem="sEZ-MZ-dSl" secondAttribute="trailing" id="lXT-T8-lNM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sEZ-MZ-dSl"/>
                     </view>
                     <connections>
