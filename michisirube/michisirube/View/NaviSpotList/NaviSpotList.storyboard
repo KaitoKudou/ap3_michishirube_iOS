@@ -23,7 +23,11 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUv-01-ZkJ">
-                                <rect key="frame" x="300" y="780" width="89" height="91"/>
+                                <rect key="frame" x="304" y="772" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="lMv-t9-UEf"/>
+                                    <constraint firstAttribute="height" constant="90" id="m2Y-4g-RqJ"/>
+                                </constraints>
                                 <state key="normal" image="AddList"/>
                                 <connections>
                                     <action selector="spotRegisterScreenTransitionButton:" destination="XTy-uV-qaR" eventType="touchUpInside" id="QRv-1M-BX3"/>
@@ -33,10 +37,9 @@
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vm7-iP-oyZ" firstAttribute="leading" secondItem="6rm-e4-0Ob" secondAttribute="leading" id="14r-Ji-zRU"/>
-                            <constraint firstItem="6rm-e4-0Ob" firstAttribute="trailing" secondItem="nUv-01-ZkJ" secondAttribute="trailing" constant="25" id="5cR-Wj-Nfj"/>
+                            <constraint firstItem="nUv-01-ZkJ" firstAttribute="bottom" secondItem="6rm-e4-0Ob" secondAttribute="bottom" id="7V3-9a-bFr"/>
                             <constraint firstItem="vm7-iP-oyZ" firstAttribute="trailing" secondItem="6rm-e4-0Ob" secondAttribute="trailing" id="90o-xT-I9J"/>
-                            <constraint firstItem="nUv-01-ZkJ" firstAttribute="leading" secondItem="6rm-e4-0Ob" secondAttribute="leading" constant="300" id="DgX-OY-7JP"/>
-                            <constraint firstAttribute="bottom" secondItem="nUv-01-ZkJ" secondAttribute="bottom" constant="25" id="MbX-7V-Cjm"/>
+                            <constraint firstItem="6rm-e4-0Ob" firstAttribute="trailing" secondItem="nUv-01-ZkJ" secondAttribute="trailing" constant="20" id="Kaq-ue-IBZ"/>
                             <constraint firstItem="vm7-iP-oyZ" firstAttribute="top" secondItem="6rm-e4-0Ob" secondAttribute="top" id="O3m-92-T5r"/>
                             <constraint firstAttribute="bottom" secondItem="vm7-iP-oyZ" secondAttribute="bottom" id="m2u-SK-C4k"/>
                         </constraints>
