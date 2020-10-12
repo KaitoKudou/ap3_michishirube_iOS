@@ -1,0 +1,19 @@
+query Spots {
+  spots(latitude: 41.796771, longitude: 140.757028, worktime: 0, emotion: 0) {
+    spots {
+      id
+      name
+      image
+      description
+      locate {
+        latitude
+        longitude
+      }
+    }
+    errors{
+      code
+      message
+      description
+    }
+  }
+}
