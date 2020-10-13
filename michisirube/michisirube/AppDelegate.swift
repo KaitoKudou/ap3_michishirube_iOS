@@ -16,14 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let loginKeychainKey = "value"
         Network.shared.apollo.perform(mutation: SignupMutation()) { [weak self] result in
-          switch result {
-          case .success(let graphQLResult):
-            guard let token = graphQLResult.data?.signup.value else { return }
-            let keychain = KeychainSwift()
-            keychain.set(token, forKey: loginKeychainKey)
-            print("Success! Result: \(graphQLResult)")
-          case .failure(let error):
-            print("Failure! Error: \(error)")
+            guard self != nil else { return }
+            switch result {
+            case .success(let graphQLResult):
+                guard let token = graphQLResult.data?.signup.value else { return }
+                let keychain = KeychainSwift()
+                keychain.set(token, forKey: loginKeychainKey)
+                print("Success! Result: \(graphQLResult.data?.signup.value)")
+            case .failure(let error):
+                print("Failure! Error: \(error)")
           }
         }
         return true
