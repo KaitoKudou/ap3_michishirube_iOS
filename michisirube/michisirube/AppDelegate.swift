@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let loginKeychainKey = "value"
+        Network.shared.apollo.perform(mutation: SignupMutation()) { [weak self] result in
+          switch result {
+          case .success(let graphQLResult):
+            guard let token = graphQLResult.data?.signup.value else { return }
+            let keychain = KeychainSwift()
+            keychain.set(token, forKey: loginKeychainKey)
+            print("Success! Result: \(graphQLResult)")
+          case .failure(let error):
+            print("Failure! Error: \(error)")
+          }
+        }
         return true
     }
 
