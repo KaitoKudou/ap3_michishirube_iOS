@@ -15,12 +15,29 @@ class Network {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = ["id": "hoge", "pass": "pass"]
         let client = URLSessionClient(sessionConfiguration: configuration, callbackQueue: .none)
-    
+
         let endpointURL = URL(string: "https://miraikeitai2020-bff.herokuapp.com/query")!
-        let transport = HTTPNetworkTransport(url: endpointURL,
-        client: client)
-        
+        let transport = HTTPNetworkTransport(url: endpointURL, client: client)
+        transport.delegate = self
         return ApolloClient(networkTransport: transport)
     }()
     
+}
+
+extension Network: HTTPNetworkTransportPreflightDelegate {
+    // 送信すべきかどうかの取得
+    func networkTransport(_ networkTransport: HTTPNetworkTransport,
+        shouldSend request: URLRequest) -> Bool {
+        return true
+    }
+   
+    // 送信前に呼ばれる
+    func networkTransport(_ networkTransport: HTTPNetworkTransport,
+        willSend request: inout URLRequest) {
+        // 認証トークンの付加
+        let keychain = KeychainSwift()
+        if let token = keychain.get("value") {
+            request.addValue(token, forHTTPHeaderField: "token")
+        }
+    }
 }
