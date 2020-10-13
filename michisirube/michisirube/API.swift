@@ -169,8 +169,8 @@ public final class SpotsQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query Spots {
-      spots(latitude: 41.796771, longitude: 140.757028, worktime: 0, emotion: 0) {
+    query Spots($deviceLatitude: Float!, $deviceLongitude: Float!, $worktime: Int!, $emotion: Int!) {
+      spots(latitude: $deviceLatitude, longitude: $deviceLongitude, worktime: $worktime, emotion: $emotion) {
         __typename
         spots {
           __typename
@@ -196,7 +196,20 @@ public final class SpotsQuery: GraphQLQuery {
 
   public let operationName: String = "Spots"
 
-  public init() {
+  public var deviceLatitude: Double
+  public var deviceLongitude: Double
+  public var worktime: Int
+  public var emotion: Int
+
+  public init(deviceLatitude: Double, deviceLongitude: Double, worktime: Int, emotion: Int) {
+    self.deviceLatitude = deviceLatitude
+    self.deviceLongitude = deviceLongitude
+    self.worktime = worktime
+    self.emotion = emotion
+  }
+
+  public var variables: GraphQLMap? {
+    return ["deviceLatitude": deviceLatitude, "deviceLongitude": deviceLongitude, "worktime": worktime, "emotion": emotion]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -204,7 +217,7 @@ public final class SpotsQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("spots", arguments: ["latitude": 41.796771, "longitude": 140.757028, "worktime": 0, "emotion": 0], type: .nonNull(.object(Spot.selections))),
+        GraphQLField("spots", arguments: ["latitude": GraphQLVariable("deviceLatitude"), "longitude": GraphQLVariable("deviceLongitude"), "worktime": GraphQLVariable("worktime"), "emotion": GraphQLVariable("emotion")], type: .nonNull(.object(Spot.selections))),
       ]
     }
 

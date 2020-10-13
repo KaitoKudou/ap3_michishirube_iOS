@@ -1,5 +1,5 @@
-query Spots {
-  spots(latitude: 41.796771, longitude: 140.757028, worktime: 0, emotion: 0) {
+query Spots($deviceLatitude: Float!, $deviceLongitude: Float!, $worktime: Int!, $emotion: Int!) {
+  spots(latitude: $deviceLatitude, longitude: $deviceLongitude, worktime: $worktime, emotion: $emotion) {
     spots {
       id
       name
@@ -17,3 +17,4 @@ query Spots {
     }
   }
 }
+
