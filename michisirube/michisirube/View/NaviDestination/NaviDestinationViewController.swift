@@ -14,8 +14,8 @@ class NaviDestinationViewController: UIViewController {
     @IBOutlet weak var destinationLabel: UILabel!
     
     //五稜郭の緯度経度
-    let destinationLatitude = "41.796771"
-    let destinationLongitude = "140.757028"
+    var destinationLatitude: Double = 41.796771
+    var destinationLongitude: Double = 140.757028
     var urlString: String! = nil
     let naviDestinationPresenter = NaviDestinationPresenter()
     var spots = [SpotsQuery.Data.Spot]()
@@ -43,6 +43,8 @@ class NaviDestinationViewController: UIViewController {
         let randomInt = Int.random(in: 0 ..< 4)   // 0から3の範囲で整数（Int型）乱数を生成
         destinationLabel.text = self.spots[0].spots![randomInt]?.name
         print(self.spots[0].spots![randomInt] as Any) // self.spots[0(fix)].spots![0(variable)]
+        destinationLatitude = (self.spots[0].spots![randomInt]?.locate!.latitude)!
+        destinationLongitude = (self.spots[0].spots![randomInt]?.locate!.longitude)!
     }
     
     
