@@ -21,6 +21,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-8r-tX2">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                         <state key="normal" image="NaviEmotionSelect"/>
+                                        <connections>
+                                            <action selector="happinessButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="7Kt-DR-IdA"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="幸せ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcH-pG-ojn">
                                         <rect key="frame" x="0.0" y="85" width="78" height="20.5"/>
@@ -36,6 +39,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzz-3r-W15">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                         <state key="normal" image="NaviEmotionSelect"/>
+                                        <connections>
+                                            <action selector="normalButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="2PP-sj-hac"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="穏やか" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbW-kz-5no">
                                         <rect key="frame" x="0.0" y="85" width="78" height="20.5"/>
@@ -69,6 +75,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KV-ql-EsS">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                         <state key="normal" image="NaviEmotionSelect"/>
+                                        <connections>
+                                            <action selector="shockButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="pXh-Hf-zlZ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ショック" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-4w-Dla">
                                         <rect key="frame" x="0.0" y="85" width="78" height="20.5"/>
