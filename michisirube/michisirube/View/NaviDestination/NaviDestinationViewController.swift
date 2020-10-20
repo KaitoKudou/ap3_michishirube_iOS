@@ -13,9 +13,9 @@ class NaviDestinationViewController: UIViewController {
     @IBOutlet weak var destinationView: UIView!
     @IBOutlet weak var destinationLabel: UILabel!
     
-    //五稜郭の緯度経度
-    var destinationLatitude: Double = 41.796771
-    var destinationLongitude: Double = 140.757028
+    //目的地の位置情報を0.0で初期化
+    var destinationLatitude: Double = 0.0
+    var destinationLongitude: Double = 0.0
     var urlString: String! = nil
     let naviDestinationPresenter = NaviDestinationPresenter()
     var spots = [SpotsQuery.Data.Spot]()
