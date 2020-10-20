@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 guard let token = graphQLResult.data?.signup.value else { return }
                 let keychain = KeychainSwift()
                 keychain.set(token, forKey: loginKeychainKey)
-                print("Success! Result: \(graphQLResult.data?.signup.value)")
+                print("Success! Result: \(String(describing: graphQLResult.data?.signup.value))")
             case .failure(let error):
                 print("Failure! Error: \(error)")
           }
