@@ -18,11 +18,13 @@ class NaviEvaluationPresenter {
         let emotionTypeNumber = userDefaults.integer(forKey: settingKey)
         let spotid = userDefaults.string(forKey: settingSpotidKey)
         let evaluationStatus = userDefaults.bool(forKey: settingEvaluationStatusKey)
+        let semaphore = DispatchSemaphore(value: 0)
         print("感情の種類の番号：\(emotionTypeNumber)")
         print("スポットID：\(String(describing: spotid))")
         print("評価のステータス：\(evaluationStatus)")
         
         Network.shared.apollo.perform(mutation: AddEvaluationMutation(spotid: spotid ?? "", emotion: emotionTypeNumber, status: evaluationStatus)) { [weak self] result in
+            semaphore.signal()
             
             guard self != nil else {
               return
@@ -36,5 +38,6 @@ class NaviEvaluationPresenter {
                 print("Failure! Error: \(error)")
             }
         }
+        semaphore.wait()
     }
 }
