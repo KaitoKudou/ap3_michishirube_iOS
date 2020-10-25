@@ -13,6 +13,8 @@ class NaviTimeSelectViewController: UIViewController {
     
     @IBOutlet weak var detailLabel: UILabel!
     
+    let naviTimeSelectPresenter = NaviTimeSelectPresenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.setBackground(name: "Background")
@@ -27,6 +29,7 @@ class NaviTimeSelectViewController: UIViewController {
     }
 
     @IBAction func NaviTimeSelectDecision(_ sender: Any) {
+        naviTimeSelectPresenter.format(date: timeRequiredPicker.date)
         let storyboard = UIStoryboard(name: "NaviDestination", bundle: nil)
         let naviDestinationViewController = storyboard.instantiateViewController(identifier: "NaviDestinationViewController") as NaviDestinationViewController
         self.navigationController?.pushViewController(naviDestinationViewController, animated: true)
