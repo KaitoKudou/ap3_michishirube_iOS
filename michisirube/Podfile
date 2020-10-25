@@ -5,6 +5,7 @@ target 'michisirube' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod "Apollo"
+  pod 'KeychainSwift', '~> 19.0'
 
   # Pods for michisirube
 
