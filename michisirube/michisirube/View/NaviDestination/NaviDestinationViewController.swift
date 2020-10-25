@@ -19,6 +19,10 @@ class NaviDestinationViewController: UIViewController {
     var urlString: String! = nil
     let naviDestinationPresenter = NaviDestinationPresenter()
     var spots = [SpotsQuery.Data.Spot.Spot?]()
+    var detours = [[SpotsQuery.Data.Spot.Detour?]?]()
+    var firstDetourLatitude: Double = 0.0 // 寄り道の緯度
+    var firstDetourLongitude: Double = 0.0 // 寄り道の経度
+    
     // 非同期のグループ
     let dispatchGroup = DispatchGroup()
     // 並列で実行
@@ -39,6 +43,7 @@ class NaviDestinationViewController: UIViewController {
         // 1つ目の並列処理
         dispatchGroup.enter()
         dispatchQueue.async {
+            print("-------------start--------------")
             self.naviDestinationPresenter.getDestinationList(completion: { spots in
                 self.spots = spots
                 print(self.spots)
@@ -50,7 +55,8 @@ class NaviDestinationViewController: UIViewController {
         dispatchGroup.enter()
         dispatchQueue.async {
             self.naviDestinationPresenter.getDetourList(completion: { detour in
-                print(detour)
+                self.detours = detour
+                print(self.detours[0]![0] as Any)
                 self.dispatchGroup.leave()
             })
         }
@@ -59,10 +65,11 @@ class NaviDestinationViewController: UIViewController {
             // ↓ゆくゆく使う
             //let randomInt = Int.random(in: 0 ..< 4)   // 0から3の範囲で整数（Int型）乱数を生成
             self.destinationLabel.text = self.spots[0]?.name
-            print(self.spots[0]?.name as Any)
             self.destinationLatitude = (self.spots[0]?.locate?.latitude)!
             self.destinationLongitude = (self.spots[0]?.locate?.longitude)!
-            print("-----end -----")
+            self.firstDetourLatitude = (self.detours[0]?[0]?.locate?.latitude)!
+            self.firstDetourLongitude = (self.detours[0]?[0]?.locate?.longitude)!
+            print("-------------end--------------")
         }
     }
     
@@ -84,7 +91,7 @@ class NaviDestinationViewController: UIViewController {
         
         //Googleマップに遷移，もしGoogleマップのアプリがインストールされていなければ既存のマップアプリを起動する
         if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
-            urlString = "comgooglemaps://?daddr=\(destinationLatitude),\(destinationLongitude)&directionsmode=walking&zoom=14"
+            urlString = "comgooglemapsurl://?daddr=\(firstDetourLatitude),\(firstDetourLongitude)+to:\(destinationLatitude),\(destinationLongitude)&directionsmode=walking&zoom=14"
         } else {
             urlString = "http://maps.apple.com/?daddr=\(destinationLatitude),\(destinationLongitude)&dirflg=w"
         }
