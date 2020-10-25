@@ -10,7 +10,7 @@
         <!--Title View Controller-->
         <scene sceneID="qdS-TQ-Sg7">
             <objects>
-                <viewController id="kDx-XT-iv0" customClass="TitleViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TitleViewController" id="kDx-XT-iv0" customClass="TitleViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zcx-OE-51v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
