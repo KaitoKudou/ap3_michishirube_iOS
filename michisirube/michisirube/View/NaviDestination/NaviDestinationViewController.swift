@@ -18,7 +18,11 @@ class NaviDestinationViewController: UIViewController {
     var destinationLongitude: Double = 0.0
     var urlString: String! = nil
     let naviDestinationPresenter = NaviDestinationPresenter()
-    var spots = [SpotsQuery.Data.Spot]()
+    var spots = [SpotsQuery.Data.Spot.Spot?]()
+    // 非同期のグループ
+    let dispatchGroup = DispatchGroup()
+    // 並列で実行
+    let dispatchQueue = DispatchQueue(label: "queue", attributes: .concurrent)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +36,39 @@ class NaviDestinationViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
-        naviDestinationPresenter.getDestinationList(completion: { spots in
-            self.spots = spots
-        })
+        // 1つ目の並列処理
+        dispatchGroup.enter()
+        dispatchQueue.async {
+            self.naviDestinationPresenter.getDestinationList(completion: { spots in
+                self.spots = spots
+                print(self.spots)
+                self.dispatchGroup.leave()
+            })
+        }
+        
+        // 2つ目の並列処理
+        dispatchGroup.enter()
+        dispatchQueue.async {
+            self.naviDestinationPresenter.getDetourList(completion: { detour in
+                print(detour)
+                self.dispatchGroup.leave()
+            })
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            // ↓ゆくゆく使う
+            //let randomInt = Int.random(in: 0 ..< 4)   // 0から3の範囲で整数（Int型）乱数を生成
+            self.destinationLabel.text = self.spots[0]?.name
+            print(self.spots[0]?.name as Any)
+            self.destinationLatitude = (self.spots[0]?.locate?.latitude)!
+            self.destinationLongitude = (self.spots[0]?.locate?.longitude)!
+            print("-----end -----")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        let randomInt = Int.random(in: 0 ..< 4)   // 0から3の範囲で整数（Int型）乱数を生成
-        destinationLabel.text = self.spots[0].spots![randomInt]?.name
-        print(self.spots[0].spots![randomInt] as Any) // self.spots[0(fix)].spots![0(variable)]
-        destinationLatitude = (self.spots[0].spots![randomInt]?.locate!.latitude)!
-        destinationLongitude = (self.spots[0].spots![randomInt]?.locate!.longitude)!
     }
     
     
