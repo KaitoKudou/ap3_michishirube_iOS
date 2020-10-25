@@ -28,6 +28,11 @@
 	<string>アプリを起動している時のみ許可する</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>常に位置情報を許可</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>カメラロールの使用</string>
 	<key>UIApplicationSceneManifest</key>

@@ -44,8 +44,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZiZ-oj-QNQ">
                                 <rect key="frame" x="55" y="344" width="304" height="208"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="五稜郭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-oG-Nle">
-                                        <rect key="frame" x="107" y="86" width="91" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="五稜郭" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-oG-Nle">
+                                        <rect key="frame" x="8" y="86" width="288" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,6 +86,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="xIC-hA-WyI"/>
                     <connections>
+                        <outlet property="destinationLabel" destination="fOp-oG-Nle" id="qGB-Nw-4jr"/>
                         <outlet property="destinationView" destination="ZiZ-oj-QNQ" id="x5q-rN-hY6"/>
                     </connections>
                 </viewController>
