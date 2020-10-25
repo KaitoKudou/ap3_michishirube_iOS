@@ -1,0 +1,10 @@
+mutation AddEvaluation($spotid: String!, $emotion: Int!, $status: Boolean!){
+  addEvaluation(spotid: $spotid, emotion: $emotion, status: $status){
+    status
+    errors{
+      code
+      message
+      description
+    }
+  }
+}
