@@ -8,7 +8,11 @@
 import UIKit
 
 class NaviEvaluationViewController: UIViewController {
-
+    
+    let userDefaults = UserDefaults.standard
+    let settingEvaluationStatusKey = "status" // UserDafaultを使う時のキー(評価のstatus)
+    let naviEvaluatioPresenter = NaviEvaluationPresenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,9 +25,13 @@ class NaviEvaluationViewController: UIViewController {
     }
     
     @IBAction func evaluationGoodButton(_ sender: Any) {
+        userDefaults.register(defaults: [settingEvaluationStatusKey: true])
+        naviEvaluatioPresenter.sendEvaluationResult()
     }
     
     @IBAction func evaluationBadButton(_ sender: Any) {
+        userDefaults.register(defaults: [settingEvaluationStatusKey: false])
+        naviEvaluatioPresenter.sendEvaluationResult()
     }
     
 }
