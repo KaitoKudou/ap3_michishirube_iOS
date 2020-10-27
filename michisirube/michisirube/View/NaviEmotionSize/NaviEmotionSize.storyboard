@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1h7-7M-QQO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,7 +10,7 @@
         <!--Navi Emotion Size View Controller-->
         <scene sceneID="jVG-We-2Eg">
             <objects>
-                <viewController storyboardIdentifier="NaviEmotionSizeViewController" id="lxD-Ou-FmY" customClass="NaviEmotionSizeViewController" customModule="michisirube" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NaviEmotionSizeViewController" id="lxD-Ou-FmY" customClass="NaviEmotionSizeViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gwe-5T-80X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,21 +41,21 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <state key="normal" image="EmotionBigButton"/>
                                 <connections>
-                                    <action selector="emotionSizeMediumButton:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="siY-7f-yKc"/>
+                                    <action selector="emotionSizeMediumButton:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="eDw-gb-wji"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-ne-2RQ">
                                 <rect key="frame" x="75" y="437" width="13" height="22"/>
                                 <state key="normal" image="EmotionSmallButton"/>
                                 <connections>
-                                    <action selector="emotionSizeSmallButton:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="x3V-Dn-mO5"/>
+                                    <action selector="emotionSizeSmallButton:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="ZHG-bU-yTm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrQ-wc-bzw">
                                 <rect key="frame" x="326" y="437" width="13" height="22"/>
                                 <state key="normal" image="EmotionSmallButton"/>
                                 <connections>
-                                    <action selector="emotionSizeLargeButton:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="ZAC-c0-bsI"/>
+                                    <action selector="emotionSizeLargeButton:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="2JF-O1-KHK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJG-BN-Stt">
@@ -99,7 +99,7 @@
                         <outlet property="emotionSizeLargeButton" destination="TrQ-wc-bzw" id="iCO-Ne-r1O"/>
                         <outlet property="emotionSizeMediumButton" destination="uFa-aa-FJN" id="cRG-Cx-7lG"/>
                         <outlet property="emotionSizeSmallButton" destination="Ydd-ne-2RQ" id="N34-rk-UgV"/>
-                        <outlet property="noticeLabel" destination="cRQ-h4-DCV" id="MNe-Ig-ZwU"/>
+                        <outlet property="emotionType" destination="cRQ-h4-DCV" id="irh-hZ-OYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8DG-pO-pJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
