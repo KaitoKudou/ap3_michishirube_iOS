@@ -16,8 +16,8 @@ class NaviEmotionSizeViewController: UIViewController {
     @IBOutlet weak var emotionSizeMediumButton: UIButton!
     @IBOutlet weak var emotionSizeLargeButton: UIButton!
     
-    let buttonImageSmall :UIImage? = UIImage(named:"EmotionSmallButton.png")
-    let buttonImageBig :UIImage? = UIImage(named:"EmotionBigButton.png")
+    let buttonImageSmall :UIImage? = UIImage(named:"EmotionSmallButton")
+    let buttonImageBig :UIImage? = UIImage(named:"EmotionBigButton")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,25 +39,26 @@ class NaviEmotionSizeViewController: UIViewController {
     @IBAction func emotionSizeSmallButton(_ sender: Any) {
         //感情の大きさを0.3として値を保存
         print(0.3)
-        emotionSizeSmallButton.setImage(buttonImageBig!, forState: .Normal)
-        emotionSizeMediumButton.setImage(buttonImageSmall!, forState: .Normal)
-        emotionSizeLargeButton.setImage(buttonImageSmall!, forState: .Normal)
+        
+        emotionSizeSmallButton.setImage(buttonImageBig, for: .normal)
+        emotionSizeMediumButton.setImage(buttonImageSmall!, for: .normal)
+        emotionSizeLargeButton.setImage(buttonImageSmall!, for: .normal)
     }
     
     @IBAction func emotionSizeMediumButton(_ sender: Any) {
         //感情の大きさを0.6として値を保存
         print(0.6)
-        emotionSizeSmallButton.setImage(buttonImageSmall!, forState: .Normal)
-        emotionSizeMediumButton.setImage(buttonImageBig!, forState: .Normal)
-        emotionSizeLargeButton.setImage(buttonImageSmall!, forState: .Normal)
+        emotionSizeSmallButton.setImage(buttonImageSmall!, for: .normal)
+        emotionSizeMediumButton.setImage(buttonImageBig!, for: .normal)
+        emotionSizeLargeButton.setImage(buttonImageSmall!, for: .normal)
     }
     
     @IBAction func emotionSizeLargeButton(_ sender: Any) {
         //感情の大きさを0.9として値を保存
         print(0.9)
-        emotionSizeSmallButton.setImage(buttonImageSmall!, forState: .Normal)
-        emotionSizeMediumButton.setImage(buttonImageSmall!, forState: .Normal)
-        emotionSizeLargeButton.setImage(buttonImageBig!, forState: .Normal)
+        emotionSizeSmallButton.setImage(buttonImageSmall!, for: .normal)
+        emotionSizeMediumButton.setImage(buttonImageSmall!, for: .normal)
+        emotionSizeLargeButton.setImage(buttonImageBig!, for: .normal)
     }
     
 }
