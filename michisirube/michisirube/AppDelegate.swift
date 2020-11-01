@@ -8,6 +8,7 @@
 
 import UIKit
 import KeychainSwift
+import NotificationCenter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
