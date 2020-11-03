@@ -81,9 +81,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let coordinateDestination = CLLocationCoordinate2DMake(destinationLatitude, destinationLongitude)
         //保存した1つ目の寄り道の位置情報を読み込んで緯度・軽度の設定を作りだす
         let coordinateFirstDetour = CLLocationCoordinate2DMake(firstDetourLatitude, firstDetourLongitude)
-        //目的地範囲を作成。ここでは半径11メートルの範囲
+        //目的地範囲を作成。ここでは半径20メートルの範囲
         let regionDestination = CLCircularRegion.init(center: coordinateDestination, radius: 20, identifier: "MY_NOTIFICATION_DESTINATION")
-        //1つ目の寄り道の範囲を作成。ここでは半径11メートルの範囲
+        //1つ目の寄り道の範囲を作成。ここでは半径20メートルの範囲
         let regionFirstDetour = CLCircularRegion.init(center: coordinateFirstDetour, radius: 20, identifier: "MY_NOTIFICATION_FIRST_DETOUR")
         //目的地の範囲の中から外への移動は通知しないが、範囲の外から中へは通知する設定
         regionDestination.notifyOnExit = false
