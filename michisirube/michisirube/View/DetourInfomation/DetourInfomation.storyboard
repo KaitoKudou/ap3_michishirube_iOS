@@ -10,7 +10,7 @@
         <!--Detour Infomation View Controller-->
         <scene sceneID="5az-bC-H3M">
             <objects>
-                <viewController id="xal-Xq-Lo3" customClass="DetourInfomationViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetourInfomationViewController" id="xal-Xq-Lo3" customClass="DetourInfomationViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ETs-GF-Vls">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
