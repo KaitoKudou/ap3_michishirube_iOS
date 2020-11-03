@@ -9,4 +9,14 @@ target 'michisirube' do
 
   # Pods for michisirube
 
+  target 'michisirubeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'michisirubeUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end
