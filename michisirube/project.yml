@@ -15,3 +15,23 @@ targets:
         "${SCRIPT_PATH}"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile="schema.json" API.swift
         "${SCRIPT_PATH}"/run-bundled-codegen.sh schema:download --endpoint="https://miraikeitai2020-bff.herokuapp.com/query"
       name: Apollo client
+  michisirubeTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - michisirubeTests
+    settings:
+    groups:
+      - michisirube
+    dependencies:
+      - target: michisirube
+  michisirubeUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - michisirubeUITests
+    settings:
+    groups:
+      - michisirube
+    dependencies:
+      - target: michisirube
