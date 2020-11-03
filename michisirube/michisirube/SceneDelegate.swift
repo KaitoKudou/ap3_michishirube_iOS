@@ -108,7 +108,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //目的地到着通知のリクエストを作成
         let requestDestination = UNNotificationRequest(identifier: "destination", content: contentDestination, trigger: triggerDestination)
         //1つ目の寄り道到着通知のリクエストを作成
-        let requestDetour = UNNotificationRequest(identifier: "detour", content: contentDetour, trigger: triggerDetour)
+        let requestDetour = UNNotificationRequest(identifier: "firstDetour", content: contentDetour, trigger: triggerDetour)
         //目的地到着通知のリクエストを登録
         self.center.add(requestDestination, withCompletionHandler: nil)
         //寄り道到着通知のリクエストを登録
@@ -131,8 +131,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 extension SceneDelegate: UNUserNotificationCenterDelegate {
+    // アプリがアクティブ、非アクテイブ、アプリ未起動,バックグラウンドでも呼ばれる
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert,.sound])
+    }
+    
     // 通知をタップするとこのメソッドが呼ばれる
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("通知がタップされた")
+        
+        if response.notification.request.identifier == "destination" {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            //　Storyboardを指定
+            let storyboard = UIStoryboard(name: "NaviEvaluation", bundle: nil)
+            // Viewcontrollerを指定
+            let initialViewController = storyboard.instantiateViewController(withIdentifier:"NaviEvaluationViewController") as! NaviEvaluationViewController
+            // rootViewControllerに入れる
+            self.window?.rootViewController = initialViewController
+            // 表示
+            self.window?.makeKeyAndVisible()
+            
+        } else if response.notification.request.identifier == "firstDetour" {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            //　Storyboardを指定
+            let storyboard = UIStoryboard(name: "DetourInfomation", bundle: nil)
+            // Viewcontrollerを指定
+            let initialViewController = storyboard.instantiateViewController(withIdentifier:"DetourInfomationViewController") as! DetourInfomationViewController
+            // rootViewControllerに入れる
+            self.window?.rootViewController = initialViewController
+            // 表示
+            self.window?.makeKeyAndVisible()
+        }
     }
 }
