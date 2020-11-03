@@ -24,6 +24,11 @@ class NaviDestinationViewController: UIViewController {
     var firstDetourLongitude: Double = 0.0 // 寄り道の経度
     let userDefaults = UserDefaults.standard
     let settingSpotidKey = "spotid" // UserDafaultを使う時のキー(spotid)
+    let destinationLatitudeKey = "destinationLatitude" // 目的地の緯度を永続化させるためのキー
+    let destinationLongitudeKey = "destinationLongitude" // 目的地の経度を永続化させるためのキー
+    let firstDetourLatitudeKey = "firstDetourLatitude" // 1つ目寄り道の緯度を永続化させるためのキー
+    let firstDetourLongitudeKey = "firstDetourLongitude" // 1つ目寄り道の経度を永続化させるためのキー
+    
     
     // 非同期のグループ
     let dispatchGroup = DispatchGroup()
@@ -69,9 +74,13 @@ class NaviDestinationViewController: UIViewController {
             //let randomInt = Int.random(in: 0 ..< 4)   // 0から3の範囲で整数（Int型）乱数を生成
             self.destinationLabel.text = self.spots[0]?.name
             self.destinationLatitude = (self.spots[0]?.locate?.latitude)!
+            self.userDefaults.register(defaults: [self.destinationLatitudeKey: self.destinationLatitude])
             self.destinationLongitude = (self.spots[0]?.locate?.longitude)!
+            self.userDefaults.register(defaults: [self.destinationLongitudeKey: self.destinationLongitude])
             self.firstDetourLatitude = (self.detours[0]?[0]?.locate?.latitude)!
+            self.userDefaults.register(defaults: [self.firstDetourLatitudeKey: self.firstDetourLatitude])
             self.firstDetourLongitude = (self.detours[0]?[0]?.locate?.longitude)!
+            self.userDefaults.register(defaults: [self.firstDetourLongitudeKey: self.firstDetourLongitude])
             print("-------------end--------------")
         }
     }
