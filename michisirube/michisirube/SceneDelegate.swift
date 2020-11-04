@@ -70,8 +70,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let firstDetourLatitudeKey = "firstDetourLatitude" // 1つ目寄り道の緯度を永続化させるためのキー
         let firstDetourLongitudeKey = "firstDetourLongitude" // 1つ目寄り道の経度を永続化させるためのキー
         
-        destinationLatitude = userDefaults.double(forKey: destinationLatitudeKey)
-        destinationLongitude = userDefaults.double(forKey: destinationLongitudeKey)
+        //destinationLatitude = userDefaults.double(forKey: destinationLatitudeKey)
+        //destinationLongitude = userDefaults.double(forKey: destinationLongitudeKey)
+        
+        //　テスト用の目的地の緯度経度
+        destinationLatitude = 41.82063826498504
+        destinationLongitude = 140.744768595328
+        
         firstDetourLatitude = userDefaults.double(forKey: firstDetourLatitudeKey)
         firstDetourLongitude = userDefaults.double(forKey: firstDetourLongitudeKey)
         print("目的地：\(destinationLatitude), \(destinationLongitude)")
@@ -82,17 +87,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //保存した1つ目の寄り道の位置情報を読み込んで緯度・軽度の設定を作りだす
         let coordinateFirstDetour = CLLocationCoordinate2DMake(firstDetourLatitude, firstDetourLongitude)
         //目的地範囲を作成。ここでは半径20メートルの範囲
-        let regionDestination = CLCircularRegion.init(center: coordinateDestination, radius: 20, identifier: "MY_NOTIFICATION_DESTINATION")
+        let regionDestination = CLCircularRegion.init(center: coordinateDestination, radius: 100, identifier: "MY_NOTIFICATION_DESTINATION")
         //1つ目の寄り道の範囲を作成。ここでは半径20メートルの範囲
         let regionFirstDetour = CLCircularRegion.init(center: coordinateFirstDetour, radius: 20, identifier: "MY_NOTIFICATION_FIRST_DETOUR")
         //目的地の範囲の中から外への移動は通知しないが、範囲の外から中へは通知する設定
-        regionDestination.notifyOnExit = false
+        regionDestination.notifyOnExit = true
         regionDestination.notifyOnEntry = true
         //1つ目の寄り道の範囲の中から外への移動は通知しないが、範囲の外から中へは通知する設定
         regionFirstDetour.notifyOnExit = false
         regionFirstDetour.notifyOnEntry = true
         //作成した目的地の範囲に入った時に通知をするトリガーを作成
-        let triggerDestination: UNNotificationTrigger = UNLocationNotificationTrigger(region: regionDestination, repeats: false)
+        //let triggerDestination: UNNotificationTrigger = UNLocationNotificationTrigger(region: regionDestination, repeats: false)
+        // テスト用のトリガー
+        let triggerDestination = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         //作成した1つ目の寄り道の範囲に入った時に通知をするトリガーを作成
         let triggerDetour: UNNotificationTrigger = UNLocationNotificationTrigger(region: regionFirstDetour, repeats: false)
         //通知する内容を作成
@@ -110,9 +117,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //1つ目の寄り道到着通知のリクエストを作成
         let requestDetour = UNNotificationRequest(identifier: "firstDetour", content: contentDetour, trigger: triggerDetour)
         //目的地到着通知のリクエストを登録
-        self.center.add(requestDestination, withCompletionHandler: nil)
-        //寄り道到着通知のリクエストを登録
-        self.center.add(requestDetour, withCompletionHandler: nil)
+        self.center.add(requestDestination, withCompletionHandler: { [weak self] error in
+            guard self != nil else { return }
+            // エラー処理
+            if let error = error {
+                print(error)
+            } else {
+                print("目的地到着通知が配信されました！")
+            }
+        })
+        //1つ目の寄り道到着通知のリクエストを登録
+        self.center.add(requestDetour, withCompletionHandler: { [weak self] error in
+            guard self != nil else { return }
+            // エラー処理
+            if let error = error {
+                print(error)
+            } else {
+                print("1つ目の寄り道到着通知配信されました！")
+            }
+        })
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
@@ -126,8 +149,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         print("sceneDidEnterBackground")
     }
-
-
 }
 
 extension SceneDelegate: UNUserNotificationCenterDelegate {
@@ -143,26 +164,26 @@ extension SceneDelegate: UNUserNotificationCenterDelegate {
         print("通知がタップされた")
         
         if response.notification.request.identifier == "destination" {
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            //　Storyboardを指定
+            print("目的地到着通知がタップされた")
+            
+            let rootViewController = self.window!.rootViewController as! UINavigationController
             let storyboard = UIStoryboard(name: "NaviEvaluation", bundle: nil)
-            // Viewcontrollerを指定
-            let initialViewController = storyboard.instantiateViewController(withIdentifier:"NaviEvaluationViewController") as! NaviEvaluationViewController
-            // rootViewControllerに入れる
-            self.window?.rootViewController = initialViewController
-            // 表示
-            self.window?.makeKeyAndVisible()
+            let naviEvaluationVC = storyboard.instantiateViewController(withIdentifier: "NaviEvaluationViewController") as! NaviEvaluationViewController
+            rootViewController.pushViewController(naviEvaluationVC, animated: true)
+            
+            // システムに完了したことを通知する
+            completionHandler()
             
         } else if response.notification.request.identifier == "firstDetour" {
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            //　Storyboardを指定
+            print("1つ目の寄り道到着通知がタップされた")
+            
+            let rootViewController = self.window!.rootViewController as! UINavigationController
             let storyboard = UIStoryboard(name: "DetourInfomation", bundle: nil)
-            // Viewcontrollerを指定
-            let initialViewController = storyboard.instantiateViewController(withIdentifier:"DetourInfomationViewController") as! DetourInfomationViewController
-            // rootViewControllerに入れる
-            self.window?.rootViewController = initialViewController
-            // 表示
-            self.window?.makeKeyAndVisible()
+            let naviEvaluationVC = storyboard.instantiateViewController(withIdentifier: "DetourInfomationViewController") as! DetourInfomationViewController
+            rootViewController.pushViewController(naviEvaluationVC, animated: true)
+            
+            // システムに完了したことを通知する
+            completionHandler()
         }
     }
 }
