@@ -27,6 +27,7 @@ class TitleViewController: UIViewController {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+        locationManager.allowsBackgroundLocationUpdates = true // バックグラウンドでの位置情報更新を許可
         setupLocationManager()
     }
     

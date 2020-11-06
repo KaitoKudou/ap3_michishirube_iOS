@@ -16,6 +16,19 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.icloud.kaitokudou2468110921.michisirube</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>michisirube</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -24,15 +37,15 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>アプリを起動している時のみ許可する</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>常に位置情報を許可</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>常に位置情報を許可</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>アプリを起動している時のみ許可する</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>カメラロールの使用</string>
 	<key>UIApplicationSceneManifest</key>
@@ -52,6 +65,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>processing</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
