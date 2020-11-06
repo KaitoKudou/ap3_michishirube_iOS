@@ -172,12 +172,22 @@ public final class SpotsQuery: GraphQLQuery {
     query Spots($deviceLatitude: Float!, $deviceLongitude: Float!, $worktime: Int!, $emotion: Int!) {
       spots(latitude: $deviceLatitude, longitude: $deviceLongitude, worktime: $worktime, emotion: $emotion) {
         __typename
-        spots {
+        spot {
+          __typename
+          id
+          name
+          locate {
+            __typename
+            latitude
+            longitude
+          }
+        }
+        detour {
           __typename
           id
           name
           image
-          description
+          Description
           locate {
             __typename
             latitude
@@ -246,7 +256,8 @@ public final class SpotsQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("spots", type: .list(.object(Spot.selections))),
+          GraphQLField("spot", type: .object(Spot.selections)),
+          GraphQLField("detour", type: .list(.object(Detour.selections))),
           GraphQLField("errors", type: .list(.object(Error.selections))),
         ]
       }
@@ -257,8 +268,8 @@ public final class SpotsQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(spots: [Spot?]? = nil, errors: [Error?]? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Spots", "spots": spots.flatMap { (value: [Spot?]) -> [ResultMap?] in value.map { (value: Spot?) -> ResultMap? in value.flatMap { (value: Spot) -> ResultMap in value.resultMap } } }, "errors": errors.flatMap { (value: [Error?]) -> [ResultMap?] in value.map { (value: Error?) -> ResultMap? in value.flatMap { (value: Error) -> ResultMap in value.resultMap } } }])
+      public init(spot: Spot? = nil, detour: [Detour?]? = nil, errors: [Error?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Spots", "spot": spot.flatMap { (value: Spot) -> ResultMap in value.resultMap }, "detour": detour.flatMap { (value: [Detour?]) -> [ResultMap?] in value.map { (value: Detour?) -> ResultMap? in value.flatMap { (value: Detour) -> ResultMap in value.resultMap } } }, "errors": errors.flatMap { (value: [Error?]) -> [ResultMap?] in value.map { (value: Error?) -> ResultMap? in value.flatMap { (value: Error) -> ResultMap in value.resultMap } } }])
       }
 
       public var __typename: String {
@@ -270,12 +281,21 @@ public final class SpotsQuery: GraphQLQuery {
         }
       }
 
-      public var spots: [Spot?]? {
+      public var spot: Spot? {
         get {
-          return (resultMap["spots"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Spot?] in value.map { (value: ResultMap?) -> Spot? in value.flatMap { (value: ResultMap) -> Spot in Spot(unsafeResultMap: value) } } }
+          return (resultMap["spot"] as? ResultMap).flatMap { Spot(unsafeResultMap: $0) }
         }
         set {
-          resultMap.updateValue(newValue.flatMap { (value: [Spot?]) -> [ResultMap?] in value.map { (value: Spot?) -> ResultMap? in value.flatMap { (value: Spot) -> ResultMap in value.resultMap } } }, forKey: "spots")
+          resultMap.updateValue(newValue?.resultMap, forKey: "spot")
+        }
+      }
+
+      public var detour: [Detour?]? {
+        get {
+          return (resultMap["detour"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Detour?] in value.map { (value: ResultMap?) -> Detour? in value.flatMap { (value: ResultMap) -> Detour in Detour(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Detour?]) -> [ResultMap?] in value.map { (value: Detour?) -> ResultMap? in value.flatMap { (value: Detour) -> ResultMap in value.resultMap } } }, forKey: "detour")
         }
       }
 
@@ -294,10 +314,8 @@ public final class SpotsQuery: GraphQLQuery {
         public static var selections: [GraphQLSelection] {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("id", type: .nonNull(.scalar(String.self))),
             GraphQLField("name", type: .nonNull(.scalar(String.self))),
-            GraphQLField("image", type: .nonNull(.scalar(String.self))),
-            GraphQLField("description", type: .nonNull(.scalar(String.self))),
             GraphQLField("locate", type: .object(Locate.selections)),
           ]
         }
@@ -308,8 +326,8 @@ public final class SpotsQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: Int, name: String, image: String, description: String, locate: Locate? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Spot", "id": id, "name": name, "image": image, "description": description, "locate": locate.flatMap { (value: Locate) -> ResultMap in value.resultMap }])
+        public init(id: String, name: String, locate: Locate? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Spot", "id": id, "name": name, "locate": locate.flatMap { (value: Locate) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -321,9 +339,119 @@ public final class SpotsQuery: GraphQLQuery {
           }
         }
 
-        public var id: Int {
+        public var id: String {
           get {
-            return resultMap["id"]! as! Int
+            return resultMap["id"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String {
+          get {
+            return resultMap["name"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var locate: Locate? {
+          get {
+            return (resultMap["locate"] as? ResultMap).flatMap { Locate(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "locate")
+          }
+        }
+
+        public struct Locate: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["Locate"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("latitude", type: .nonNull(.scalar(Double.self))),
+              GraphQLField("longitude", type: .nonNull(.scalar(Double.self))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(latitude: Double, longitude: Double) {
+            self.init(unsafeResultMap: ["__typename": "Locate", "latitude": latitude, "longitude": longitude])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var latitude: Double {
+            get {
+              return resultMap["latitude"]! as! Double
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "latitude")
+            }
+          }
+
+          public var longitude: Double {
+            get {
+              return resultMap["longitude"]! as! Double
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "longitude")
+            }
+          }
+        }
+      }
+
+      public struct Detour: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Detour"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(String.self))),
+            GraphQLField("name", type: .nonNull(.scalar(String.self))),
+            GraphQLField("image", type: .nonNull(.scalar(String.self))),
+            GraphQLField("Description", type: .nonNull(.scalar(String.self))),
+            GraphQLField("locate", type: .object(Locate.selections)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: String, name: String, image: String, description: String, locate: Locate? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Detour", "id": id, "name": name, "image": image, "Description": description, "locate": locate.flatMap { (value: Locate) -> ResultMap in value.resultMap }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: String {
+          get {
+            return resultMap["id"]! as! String
           }
           set {
             resultMap.updateValue(newValue, forKey: "id")
@@ -350,10 +478,10 @@ public final class SpotsQuery: GraphQLQuery {
 
         public var description: String {
           get {
-            return resultMap["description"]! as! String
+            return resultMap["Description"]! as! String
           }
           set {
-            resultMap.updateValue(newValue, forKey: "description")
+            resultMap.updateValue(newValue, forKey: "Description")
           }
         }
 
