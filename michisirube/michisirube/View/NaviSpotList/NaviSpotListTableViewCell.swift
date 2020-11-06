@@ -15,6 +15,8 @@ class NaviSpotListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundColor = UIColor.clear
+        selectedBackgroundView = makeSelectedBackgroundView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,6 +27,12 @@ class NaviSpotListTableViewCell: UITableViewCell {
     
     func setSpotListCustomCell() {
         
+    }
+    
+    private func makeSelectedBackgroundView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        return view
     }
     
 }

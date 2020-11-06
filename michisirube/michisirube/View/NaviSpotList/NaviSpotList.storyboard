@@ -18,6 +18,12 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-iP-oyZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="odm-4g-OqS" kind="embed" id="vfz-zv-p6T"/>
                                 </connections>
@@ -37,10 +43,10 @@
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vm7-iP-oyZ" firstAttribute="leading" secondItem="6rm-e4-0Ob" secondAttribute="leading" id="14r-Ji-zRU"/>
-                            <constraint firstItem="nUv-01-ZkJ" firstAttribute="bottom" secondItem="6rm-e4-0Ob" secondAttribute="bottom" id="7V3-9a-bFr"/>
                             <constraint firstItem="vm7-iP-oyZ" firstAttribute="trailing" secondItem="6rm-e4-0Ob" secondAttribute="trailing" id="90o-xT-I9J"/>
                             <constraint firstItem="6rm-e4-0Ob" firstAttribute="trailing" secondItem="nUv-01-ZkJ" secondAttribute="trailing" constant="20" id="Kaq-ue-IBZ"/>
                             <constraint firstItem="vm7-iP-oyZ" firstAttribute="top" secondItem="6rm-e4-0Ob" secondAttribute="top" id="O3m-92-T5r"/>
+                            <constraint firstItem="nUv-01-ZkJ" firstAttribute="bottom" secondItem="6rm-e4-0Ob" secondAttribute="bottom" id="YW1-ED-Qap"/>
                             <constraint firstAttribute="bottom" secondItem="vm7-iP-oyZ" secondAttribute="bottom" id="m2u-SK-C4k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6rm-e4-0Ob"/>
@@ -72,17 +78,24 @@
         <!--Show Navi Spot View Controller-->
         <scene sceneID="FoF-MJ-QlK">
             <objects>
-                <viewController id="odm-4g-OqS" customClass="ShowNaviSpotViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="odm-4g-OqS" customClass="ShowNaviSpotViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="waA-xj-35j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HlT-Bi-IN5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="764"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HlT-Bi-IN5" firstAttribute="leading" secondItem="sEZ-MZ-dSl" secondAttribute="leading" id="JOm-G8-X61"/>
                             <constraint firstItem="HlT-Bi-IN5" firstAttribute="top" secondItem="sEZ-MZ-dSl" secondAttribute="top" id="PGE-B3-9P5"/>
@@ -97,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="umR-KS-l7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873.913043478261" y="43.526785714285715"/>
+            <point key="canvasLocation" x="1850.7246376811595" y="43.526785714285715"/>
         </scene>
     </scenes>
     <resources>
