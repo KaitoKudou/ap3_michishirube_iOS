@@ -22,6 +22,8 @@ class NaviDestinationViewController: UIViewController {
     var detours = [[SpotsQuery.Data.Spot.Detour?]?]()
     var firstDetourLatitude: Double = 0.0 // 寄り道の緯度
     var firstDetourLongitude: Double = 0.0 // 寄り道の経度
+    let userDefaults = UserDefaults.standard
+    let settingSpotidKey = "spotid" // UserDafaultを使う時のキー(spotid)
     
     // 非同期のグループ
     let dispatchGroup = DispatchGroup()
@@ -47,6 +49,7 @@ class NaviDestinationViewController: UIViewController {
             self.naviDestinationPresenter.getDestinationList(completion: { spots in
                 self.spots = spots
                 print(self.spots)
+                self.userDefaults.register(defaults: [self.settingSpotidKey: self.spots[0]!.id as String])
                 self.dispatchGroup.leave()
             })
         }
