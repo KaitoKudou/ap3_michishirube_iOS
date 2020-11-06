@@ -12,7 +12,7 @@ class NaviTimeSelectPresenter {
     let userDefaults = UserDefaults.standard
     
     // UIDatePickerViewから時間と分を取得
-    // 入力された時間を分に直して、80%にする
+    // 入力された時間を分に直す
     func format(date: Date) {
         let components = Calendar.current.dateComponents([.hour, .minute], from: date)
         let hour = components.hour!
@@ -21,9 +21,9 @@ class NaviTimeSelectPresenter {
         
         if hour > 0 {
             hoursToMinutes = hour * 60
-            userDefaults.register(defaults: [settingKey: (hoursToMinutes + minute) * 4 / 5])
+            userDefaults.register(defaults: [settingKey: (hoursToMinutes + minute)])
         } else {
-            userDefaults.register(defaults: [settingKey: minute * 4 / 5])
+            userDefaults.register(defaults: [settingKey: minute])
         }
     }
 }
