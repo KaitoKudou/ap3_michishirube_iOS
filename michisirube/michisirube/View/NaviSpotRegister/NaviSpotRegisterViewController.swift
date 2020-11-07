@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol Base64SendProtocol {
+    func sendBase64() -> String
+}
+
 class NaviSpotRegisterViewController: UIViewController{
 
     @IBOutlet weak var selectEmotionLabel: UILabel!
@@ -23,10 +27,12 @@ class NaviSpotRegisterViewController: UIViewController{
     
     let list: [String] = ["幸せ", "怒り", "ショック", "普通"]
     var base64String: String? = nil
+    var naviSpotRegisterPresenter: NaviSpotRegisterPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        naviSpotRegisterPresenter = NaviSpotRegisterPresenter(view: self)
         photoButton.imageView?.contentMode = .scaleAspectFit
         photoButton.contentHorizontalAlignment = .fill
         photoButton.contentVerticalAlignment = .fill
@@ -86,7 +92,7 @@ extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINav
         // UIImageをbase64に変換する
         let imageData = spotImageView.image?.pngData()
         base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
-        
+        print(naviSpotRegisterPresenter.showBase64())
         // 写真を選ぶビューを引っ込める
         self.dismiss(animated: true)
     }
@@ -112,5 +118,11 @@ extension NaviSpotRegisterViewController: UITextFieldDelegate {
         placeTextField.resignFirstResponder()
         explainTextField.resignFirstResponder()
         return true
+    }
+}
+
+extension NaviSpotRegisterViewController: Base64SendProtocol {
+    func sendBase64() -> String {
+        return self.base64String ?? "nothing"
     }
 }
