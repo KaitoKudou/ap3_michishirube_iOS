@@ -76,16 +76,17 @@ class NaviSpotRegisterViewController: UIViewController{
 }
 
 extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-       // 写真を選んだ後に呼ばれる処理
-       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-           // 選択した写真を取得する
-           let image = info[.originalImage] as! UIImage
-           // ビューに表示する
-           spotImageView.image = image
-           // 写真を選ぶビューを引っ込める
-           self.dismiss(animated: true)
-       }
-   }
+    // 写真を選んだ後に呼ばれる処理
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 選択した写真を取得する
+        let image = info[.originalImage] as! UIImage
+        // ビューに表示する
+        spotImageView.image = image
+        
+        // 写真を選ぶビューを引っ込める
+        self.dismiss(animated: true)
+    }
+}
 
 extension NaviSpotRegisterViewController: PickerViewKeyboardDelegate {
     func updateSelectEmotionLabel(selectedData: String) {
