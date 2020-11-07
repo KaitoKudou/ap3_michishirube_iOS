@@ -44,11 +44,16 @@ class NaviSpotRegisterViewController: UIViewController{
         
         selectEmotionLabel.text = list.first
         emotionSelectButton.delegate = self
-        
+        placeTextField.delegate = self
+        explainTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true) // キーボード外タップでキーボードを閉じる
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -94,5 +99,13 @@ extension NaviSpotRegisterViewController: PickerViewKeyboardDelegate {
     }
     func didDone(sender: PickerViewKeyboard, selectedData: String) {
         sender.resignFirstResponder()
+    }
+}
+
+extension NaviSpotRegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        placeTextField.resignFirstResponder()
+        explainTextField.resignFirstResponder()
+        return true
     }
 }
