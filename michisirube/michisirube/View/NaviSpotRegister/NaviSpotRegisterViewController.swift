@@ -22,6 +22,7 @@ class NaviSpotRegisterViewController: UIViewController{
     @IBOutlet weak var emotionSelectButton: PickerViewKeyboard!
     
     let list: [String] = ["幸せ", "怒り", "ショック", "普通"]
+    var base64String: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,9 @@ extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINav
         let image = info[.originalImage] as! UIImage
         // ビューに表示する
         spotImageView.image = image
+        // UIImageをbase64に変換する
+        let imageData = spotImageView.image?.pngData()
+        base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
         
         // 写真を選ぶビューを引っ込める
         self.dismiss(animated: true)
