@@ -87,6 +87,7 @@ class NaviSpotRegisterViewController: UIViewController{
     }
     
     @IBAction func spotRegisterButton(_ sender: Any) {
+        naviSpotRegisterPresenter.show()
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -101,7 +102,6 @@ extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINav
         // UIImageをbase64に変換する
         let imageData = spotImageView.image?.pngData()
         base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
-        naviSpotRegisterPresenter.show()
         // 写真を選ぶビューを引っ込める
         self.dismiss(animated: true)
     }
