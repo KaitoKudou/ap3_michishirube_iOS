@@ -72,6 +72,7 @@ extension PickerViewKeyboard: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         delegate.updateSelectEmotionLabel(selectedData: data[row])
+        delegate.sendEmotionNumber(row: row)
     }
 }
 
@@ -80,4 +81,5 @@ protocol PickerViewKeyboardDelegate {
     func initSelectedRow(sender: PickerViewKeyboard) -> Int
     func didDone(sender: PickerViewKeyboard, selectedData: String)
     func updateSelectEmotionLabel(selectedData: String)
+    func sendEmotionNumber(row: Int)
 }
