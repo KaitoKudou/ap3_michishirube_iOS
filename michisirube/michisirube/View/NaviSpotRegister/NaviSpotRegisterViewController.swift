@@ -8,7 +8,7 @@
 import UIKit
 
 protocol Base64SendProtocol {
-    func sendBase64() -> String
+    func sendBase64() -> String // UIImageをbase64に変更してサーバに送る
 }
 
 class NaviSpotRegisterViewController: UIViewController{
@@ -28,11 +28,16 @@ class NaviSpotRegisterViewController: UIViewController{
     let list: [String] = ["幸せ", "怒り", "ショック", "普通"]
     var base64String: String? = nil
     var naviSpotRegisterPresenter: NaviSpotRegisterPresenter!
+    var emotionSellectNumber: Int!
+    let userDefaults = UserDefaults.standard
+    let settingEmotionSellectNumberKey = "emotionSellect" // UserDafaultを使う時のキー(感情の種類)
+    let settingPlaceTextKey = "placeText" // UserDafaultを使う時のキー(場所の名前)
+    let settingExplainTextKey = "explainText" // UserDafaultを使う時のキー(場所の詳細)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        naviSpotRegisterPresenter = NaviSpotRegisterPresenter(view: self)
+        naviSpotRegisterPresenter = NaviSpotRegisterPresenter(base64SendProtocol: self)
         photoButton.imageView?.contentMode = .scaleAspectFit
         photoButton.contentHorizontalAlignment = .fill
         photoButton.contentVerticalAlignment = .fill
@@ -80,6 +85,10 @@ class NaviSpotRegisterViewController: UIViewController{
             self.present(pickerView, animated: true)
         }
     }
+    
+    @IBAction func spotRegisterButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -92,13 +101,18 @@ extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINav
         // UIImageをbase64に変換する
         let imageData = spotImageView.image?.pngData()
         base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
-        print(naviSpotRegisterPresenter.showBase64())
+        naviSpotRegisterPresenter.show()
         // 写真を選ぶビューを引っ込める
         self.dismiss(animated: true)
     }
 }
 
 extension NaviSpotRegisterViewController: PickerViewKeyboardDelegate {
+    func sendEmotionNumber(row: Int) {
+        emotionSellectNumber = row
+        userDefaults.register(defaults: [settingEmotionSellectNumberKey: emotionSellectNumber as Int])
+    }
+    
     func updateSelectEmotionLabel(selectedData: String) {
         selectEmotionLabel.text = selectedData
     }
@@ -115,6 +129,8 @@ extension NaviSpotRegisterViewController: PickerViewKeyboardDelegate {
 
 extension NaviSpotRegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        userDefaults.register(defaults: [settingPlaceTextKey: placeTextField.text ?? ""])
+        userDefaults.register(defaults: [settingExplainTextKey: explainTextField.text ?? ""])
         placeTextField.resignFirstResponder()
         explainTextField.resignFirstResponder()
         return true
