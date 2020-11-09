@@ -19,7 +19,7 @@
                                 <rect key="frame" x="100" y="758" width="214" height="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="感情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ya-dw-27P">
                                 <rect key="frame" x="100" y="636" width="214" height="21"/>
@@ -31,7 +31,7 @@
                                 <rect key="frame" x="100" y="516.5" width="214" height="18.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-7O-6ji">
                                 <rect key="frame" x="145" y="243" width="125" height="123"/>
@@ -85,6 +85,9 @@
                                     <constraint firstAttribute="width" constant="150" id="eX5-aU-TMl"/>
                                 </constraints>
                                 <state key="normal" title="スポット登録"/>
+                                <connections>
+                                    <action selector="spotRegisterButton:" destination="On0-x2-i32" eventType="touchUpInside" id="wwa-o4-d47"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
