@@ -15,80 +15,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="QMA-Ep-egl">
-                                <rect key="frame" x="88" y="345.5" width="78" height="105.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-8r-tX2">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
-                                        <state key="normal" image="NaviEmotionSelect"/>
-                                        <connections>
-                                            <action selector="happinessButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="7Kt-DR-IdA"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="幸せ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcH-pG-ojn">
-                                        <rect key="frame" x="0.0" y="85" width="78" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="DaP-5h-dLs">
-                                <rect key="frame" x="248" y="345.5" width="78" height="105.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzz-3r-W15">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
-                                        <state key="normal" image="NaviEmotionSelect"/>
-                                        <connections>
-                                            <action selector="normalButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="2PP-sj-hac"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="穏やか" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbW-kz-5no">
-                                        <rect key="frame" x="0.0" y="85" width="78" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="NSF-ux-ThC">
-                                <rect key="frame" x="88" y="545.5" width="78" height="105.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSB-fm-495">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
-                                        <state key="normal" image="NaviEmotionSelect"/>
-                                        <connections>
-                                            <action selector="angryButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="9AS-FP-AiD"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="怒り" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-hV-ijd">
-                                        <rect key="frame" x="0.0" y="85" width="78" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="5xx-9q-R39">
-                                <rect key="frame" x="248" y="545.5" width="78" height="105.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KV-ql-EsS">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
-                                        <state key="normal" image="NaviEmotionSelect"/>
-                                        <connections>
-                                            <action selector="shockButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="pXh-Hf-zlZ"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ショック" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-4w-Dla">
-                                        <rect key="frame" x="0.0" y="85" width="78" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-8r-tX2">
+                                <rect key="frame" x="70" y="278" width="115" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="2vg-V2-1up"/>
+                                    <constraint firstAttribute="height" constant="115" id="I3M-OJ-g8b"/>
+                                </constraints>
+                                <state key="normal" image="hap03"/>
+                                <connections>
+                                    <action selector="happinessButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="7Kt-DR-IdA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSB-fm-495">
+                                <rect key="frame" x="70" y="522" width="115" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="D9k-lk-gMu"/>
+                                    <constraint firstAttribute="width" constant="115" id="Jrf-G5-tpH"/>
+                                    <constraint firstAttribute="height" constant="115" id="l4j-Oc-gek"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="115" id="snf-cP-dAM"/>
+                                </constraints>
+                                <state key="normal" image="waku04"/>
+                                <connections>
+                                    <action selector="angryButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="9AS-FP-AiD"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今の感情を教えてください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-3I-DcQ">
-                                <rect key="frame" x="20" y="128" width="374" height="60"/>
+                                <rect key="frame" x="84.5" y="168" width="245" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="V6X-4K-NhG"/>
                                 </constraints>
@@ -96,20 +48,77 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ハッピー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcH-pG-ojn">
+                                <rect key="frame" x="93" y="401" width="69.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KV-ql-EsS">
+                                <rect key="frame" x="229" y="522" width="115" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="FN1-en-jmv"/>
+                                    <constraint firstAttribute="width" constant="115" id="msB-R7-1QK"/>
+                                </constraints>
+                                <state key="normal" image="sad03"/>
+                                <connections>
+                                    <action selector="shockButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="pXh-Hf-zlZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="しんみり" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-4w-Dla">
+                                <rect key="frame" x="256.5" y="645" width="69.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="わくわく" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-hV-ijd">
+                                <rect key="frame" x="88" y="645" width="69.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzz-3r-W15">
+                                <rect key="frame" x="229" y="278" width="115" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="RVw-Ny-bTM"/>
+                                    <constraint firstAttribute="width" constant="115" id="SHP-JE-yGz"/>
+                                </constraints>
+                                <state key="normal" image="oda04"/>
+                                <connections>
+                                    <action selector="normalButton:" destination="GEF-IK-Qlp" eventType="touchUpInside" id="2PP-sj-hac"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="穏やか" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbW-kz-5no">
+                                <rect key="frame" x="245" y="401" width="82" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="Is7-vt-kOp"/>
+                                    <constraint firstAttribute="height" constant="21" id="bd3-tt-YSm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QMA-Ep-egl" firstAttribute="centerY" secondItem="6YT-jI-dhn" secondAttribute="centerY" constant="-50" id="6Ic-iT-fjU"/>
-                            <constraint firstItem="5xx-9q-R39" firstAttribute="centerX" secondItem="6YT-jI-dhn" secondAttribute="centerX" constant="80" id="Eg5-iQ-cQf"/>
-                            <constraint firstItem="NSF-ux-ThC" firstAttribute="centerY" secondItem="6YT-jI-dhn" secondAttribute="centerY" constant="150" id="MHS-He-rEz"/>
-                            <constraint firstItem="NSF-ux-ThC" firstAttribute="centerX" secondItem="6YT-jI-dhn" secondAttribute="centerX" constant="-80" id="SJa-uI-nDf"/>
-                            <constraint firstItem="fHW-3I-DcQ" firstAttribute="top" secondItem="HoJ-aV-n7K" secondAttribute="top" constant="40" id="WVi-M8-oHd"/>
-                            <constraint firstItem="DaP-5h-dLs" firstAttribute="centerY" secondItem="6YT-jI-dhn" secondAttribute="centerY" constant="-50" id="fDY-QB-b5c"/>
-                            <constraint firstItem="QMA-Ep-egl" firstAttribute="centerX" secondItem="6YT-jI-dhn" secondAttribute="centerX" constant="-80" id="lUp-CR-P8a"/>
-                            <constraint firstItem="DaP-5h-dLs" firstAttribute="centerX" secondItem="6YT-jI-dhn" secondAttribute="centerX" constant="80" id="lgK-lL-uKZ"/>
-                            <constraint firstItem="HoJ-aV-n7K" firstAttribute="trailing" secondItem="fHW-3I-DcQ" secondAttribute="trailing" constant="20" id="n2C-y2-bPY"/>
-                            <constraint firstItem="5xx-9q-R39" firstAttribute="centerY" secondItem="6YT-jI-dhn" secondAttribute="centerY" constant="150" id="s5A-bg-paj"/>
-                            <constraint firstItem="fHW-3I-DcQ" firstAttribute="leading" secondItem="HoJ-aV-n7K" secondAttribute="leading" constant="20" id="z3a-Mf-3At"/>
+                            <constraint firstItem="UcH-pG-ojn" firstAttribute="top" secondItem="RDg-8r-tX2" secondAttribute="bottom" constant="8" id="28n-Tr-ckg"/>
+                            <constraint firstItem="RDg-8r-tX2" firstAttribute="leading" secondItem="HoJ-aV-n7K" secondAttribute="leading" constant="70" id="4n5-Dh-wUs"/>
+                            <constraint firstItem="LSB-fm-495" firstAttribute="leading" secondItem="HoJ-aV-n7K" secondAttribute="leading" constant="70" id="Dao-G4-gjK"/>
+                            <constraint firstItem="fHW-3I-DcQ" firstAttribute="centerX" secondItem="6YT-jI-dhn" secondAttribute="centerX" id="GOC-1r-o7h"/>
+                            <constraint firstItem="dbW-kz-5no" firstAttribute="top" secondItem="Hzz-3r-W15" secondAttribute="bottom" constant="8" id="Gn9-18-262"/>
+                            <constraint firstItem="HoJ-aV-n7K" firstAttribute="trailing" secondItem="7KV-ql-EsS" secondAttribute="trailing" constant="70" id="MNI-vH-T2c"/>
+                            <constraint firstItem="eR4-hV-ijd" firstAttribute="leading" secondItem="HoJ-aV-n7K" secondAttribute="leading" constant="88" id="O5U-lB-Vf7"/>
+                            <constraint firstItem="HoJ-aV-n7K" firstAttribute="trailing" secondItem="YsY-4w-Dla" secondAttribute="trailing" constant="88" id="PkN-1j-CMj"/>
+                            <constraint firstItem="RDg-8r-tX2" firstAttribute="top" secondItem="fHW-3I-DcQ" secondAttribute="bottom" constant="50" id="SSC-DU-qmh"/>
+                            <constraint firstItem="LSB-fm-495" firstAttribute="top" secondItem="UcH-pG-ojn" secondAttribute="bottom" constant="100" id="U3j-6j-4Pc"/>
+                            <constraint firstItem="HoJ-aV-n7K" firstAttribute="trailing" secondItem="dbW-kz-5no" secondAttribute="trailing" constant="87" id="ZA1-qw-BVG"/>
+                            <constraint firstItem="UcH-pG-ojn" firstAttribute="leading" secondItem="HoJ-aV-n7K" secondAttribute="leading" constant="93" id="bms-sq-MjG"/>
+                            <constraint firstItem="YsY-4w-Dla" firstAttribute="top" secondItem="7KV-ql-EsS" secondAttribute="bottom" constant="8" id="cwr-Ei-q5X"/>
+                            <constraint firstItem="Hzz-3r-W15" firstAttribute="top" secondItem="fHW-3I-DcQ" secondAttribute="bottom" constant="50" id="iIb-1m-Uah"/>
+                            <constraint firstItem="HoJ-aV-n7K" firstAttribute="trailing" secondItem="Hzz-3r-W15" secondAttribute="trailing" constant="70" id="jaY-UF-jyk"/>
+                            <constraint firstItem="eR4-hV-ijd" firstAttribute="top" secondItem="LSB-fm-495" secondAttribute="bottom" constant="8" id="lKk-Er-v1z"/>
+                            <constraint firstItem="7KV-ql-EsS" firstAttribute="top" secondItem="dbW-kz-5no" secondAttribute="bottom" constant="100" id="qmP-4u-eQo"/>
+                            <constraint firstItem="fHW-3I-DcQ" firstAttribute="top" secondItem="HoJ-aV-n7K" secondAttribute="top" constant="80" id="vKS-bH-Km7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HoJ-aV-n7K"/>
                     </view>
@@ -139,6 +148,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NaviEmotionSelect" width="78" height="78"/>
+        <image name="hap03" width="256" height="256"/>
+        <image name="oda04" width="256" height="256"/>
+        <image name="sad03" width="256" height="256"/>
+        <image name="waku04" width="256" height="256"/>
     </resources>
 </document>
