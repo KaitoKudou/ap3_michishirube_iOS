@@ -11,14 +11,20 @@ class NaviDestinationPresenter {
     let userDefaults = UserDefaults.standard
     let settingKey = "value" // UserDafaultを使う時のキー(感情の値)
     let settingWorkTimeKey = "time" // UserDafaultを使う時のキー(所要時間)
+    let settingDeviceLatitudeKey = "deviceLatitude" // デバイスの緯度
+    let settingDeviceLongitudeKey = "deviceLongitude" // デバイスの経度
     
     // サーバーから目的地のリストを受け取る
     func getDestinationList(completion: @escaping ([SpotsQuery.Data.Spot.Spot?]) -> Void) {
         let emotionTypeNumber = userDefaults.integer(forKey: settingKey)
         let workTime = userDefaults.integer(forKey: settingWorkTimeKey)
+        let latitude = userDefaults.double(forKey: settingDeviceLatitudeKey)
+        let longitude = userDefaults.double(forKey: settingDeviceLongitudeKey)
         print("感情の種類の番号：\(emotionTypeNumber)")
         print("所要時間：\(workTime)分")
-        Network.shared.apollo.fetch(query: SpotsQuery(deviceLatitude: 41.796771, deviceLongitude: 140.757028, worktime: workTime, emotion: emotionTypeNumber)) { [weak self] result in
+        print("デバイスの緯度\(latitude)")
+        print("デバイスの経度\(longitude)")
+        Network.shared.apollo.fetch(query: SpotsQuery(deviceLatitude: latitude, deviceLongitude: longitude, worktime: workTime, emotion: emotionTypeNumber)) { [weak self] result in
 
             guard self != nil else {
               return
@@ -32,7 +38,7 @@ class NaviDestinationPresenter {
                 print("Failure! Error: \(error)")
             }
         }
-        
+
     }
     
     // サーバから寄り道をもらう
@@ -52,8 +58,6 @@ class NaviDestinationPresenter {
             case .failure(let error):
                 print("Failure! Error: \(error)")
             }
-            
         }
-        
     }
 }
