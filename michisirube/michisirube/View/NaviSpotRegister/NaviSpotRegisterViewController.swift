@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol Base64SendProtocol {
+    func sendBase64() -> String
+}
+
 class NaviSpotRegisterViewController: UIViewController{
 
     @IBOutlet weak var selectEmotionLabel: UILabel!
@@ -22,10 +26,13 @@ class NaviSpotRegisterViewController: UIViewController{
     @IBOutlet weak var emotionSelectButton: PickerViewKeyboard!
     
     let list: [String] = ["幸せ", "怒り", "ショック", "普通"]
+    var base64String: String? = nil
+    var naviSpotRegisterPresenter: NaviSpotRegisterPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        naviSpotRegisterPresenter = NaviSpotRegisterPresenter(view: self)
         photoButton.imageView?.contentMode = .scaleAspectFit
         photoButton.contentHorizontalAlignment = .fill
         photoButton.contentVerticalAlignment = .fill
@@ -44,11 +51,16 @@ class NaviSpotRegisterViewController: UIViewController{
         
         selectEmotionLabel.text = list.first
         emotionSelectButton.delegate = self
-        
+        placeTextField.delegate = self
+        explainTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true) // キーボード外タップでキーボードを閉じる
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -71,16 +83,20 @@ class NaviSpotRegisterViewController: UIViewController{
 }
 
 extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-       // 写真を選んだ後に呼ばれる処理
-       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-           // 選択した写真を取得する
-           let image = info[.originalImage] as! UIImage
-           // ビューに表示する
-           spotImageView.image = image
-           // 写真を選ぶビューを引っ込める
-           self.dismiss(animated: true)
-       }
-   }
+    // 写真を選んだ後に呼ばれる処理
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 選択した写真を取得する
+        let image = info[.originalImage] as! UIImage
+        // ビューに表示する
+        spotImageView.image = image
+        // UIImageをbase64に変換する
+        let imageData = spotImageView.image?.pngData()
+        base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
+        print(naviSpotRegisterPresenter.showBase64())
+        // 写真を選ぶビューを引っ込める
+        self.dismiss(animated: true)
+    }
+}
 
 extension NaviSpotRegisterViewController: PickerViewKeyboardDelegate {
     func updateSelectEmotionLabel(selectedData: String) {
@@ -94,5 +110,19 @@ extension NaviSpotRegisterViewController: PickerViewKeyboardDelegate {
     }
     func didDone(sender: PickerViewKeyboard, selectedData: String) {
         sender.resignFirstResponder()
+    }
+}
+
+extension NaviSpotRegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        placeTextField.resignFirstResponder()
+        explainTextField.resignFirstResponder()
+        return true
+    }
+}
+
+extension NaviSpotRegisterViewController: Base64SendProtocol {
+    func sendBase64() -> String {
+        return self.base64String ?? "nothing"
     }
 }
