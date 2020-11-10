@@ -38,7 +38,6 @@ class NaviDestinationPresenter {
                 print("Failure! Error: \(error)")
             }
         }
-
     }
     
     // サーバから寄り道をもらう
