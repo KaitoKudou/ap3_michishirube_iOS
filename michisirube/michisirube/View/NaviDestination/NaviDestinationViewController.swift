@@ -64,7 +64,7 @@ class NaviDestinationViewController: UIViewController {
         dispatchQueue.async {
             self.naviDestinationPresenter.getDetourList(completion: { detour in
                 self.detours = detour
-                print(self.detours[0]![0] as Any)
+                print(self.detours[0] as Any)
                 self.dispatchGroup.leave()
             })
         }
@@ -77,10 +77,10 @@ class NaviDestinationViewController: UIViewController {
             self.userDefaults.register(defaults: [self.destinationLatitudeKey: self.destinationLatitude])
             self.destinationLongitude = (self.spots[0]?.locate?.longitude)!
             self.userDefaults.register(defaults: [self.destinationLongitudeKey: self.destinationLongitude])
-            self.firstDetourLatitude = (self.detours[0]?[0]?.locate?.latitude)!
-            self.userDefaults.register(defaults: [self.firstDetourLatitudeKey: self.firstDetourLatitude])
-            self.firstDetourLongitude = (self.detours[0]?[0]?.locate?.longitude)!
-            self.userDefaults.register(defaults: [self.firstDetourLongitudeKey: self.firstDetourLongitude])
+//            self.firstDetourLatitude = (self.detours[0]?[0]?.locate?.latitude)!
+//            self.userDefaults.register(defaults: [self.firstDetourLatitudeKey: self.firstDetourLatitude])
+//            self.firstDetourLongitude = (self.detours[0]?[0]?.locate?.longitude)!
+//            self.userDefaults.register(defaults: [self.firstDetourLongitudeKey: self.firstDetourLongitude])
             print("-------------end--------------")
         }
     }
@@ -103,7 +103,7 @@ class NaviDestinationViewController: UIViewController {
         
         //Googleマップに遷移，もしGoogleマップのアプリがインストールされていなければ既存のマップアプリを起動する
         if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
-            urlString = "comgooglemapsurl://?daddr=\(firstDetourLatitude),\(firstDetourLongitude)+to:\(destinationLatitude),\(destinationLongitude)&directionsmode=walking&zoom=14"
+            urlString = "comgooglemapsurl://?daddr=41.815245844721,140.75453873745+to:\(destinationLatitude),\(destinationLongitude)&directionsmode=walking&zoom=14"
         } else {
             urlString = "http://maps.apple.com/?daddr=\(destinationLatitude),\(destinationLongitude)&dirflg=w"
         }
