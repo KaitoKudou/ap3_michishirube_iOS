@@ -54,9 +54,9 @@ class NaviEmotionSelectViewController: UIViewController {
         emotionNunber = 2
         userDefaults.register(defaults: [settingKey: emotionNunber])
         
-        let storyboard = UIStoryboard(name: "NaviEmotionSize", bundle: nil)
-        let naviEmotionSizeViewController = storyboard.instantiateViewController(identifier: "NaviEmotionSizeViewController") as NaviEmotionSizeViewController
-        self.navigationController?.pushViewController(naviEmotionSizeViewController, animated: true)
+        let storyboard = UIStoryboard(name: "NaviTimeSelect", bundle: nil)
+        let naviTimeSelectViewController = storyboard.instantiateViewController(identifier: "NaviTimeSelectViewController") as NaviTimeSelectViewController
+        self.navigationController?.pushViewController(naviTimeSelectViewController, animated: true)
     }
     
     // ショックのボタン
