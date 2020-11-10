@@ -17,6 +17,7 @@ class Network {
         let client = URLSessionClient(sessionConfiguration: configuration, callbackQueue: .none)
 
         let endpointURL = URL(string: "https://miraikeitai2020-bff.herokuapp.com/query")!
+        print(endpointURL)
         let transport = HTTPNetworkTransport(url: endpointURL, client: client)
         transport.delegate = self
         return ApolloClient(networkTransport: transport)
