@@ -38,7 +38,7 @@ class NaviDestinationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        destinationLabel.text = ""
+        destinationLabel.text = "読み込み中"
         //背景設定
         self.view.setBackground(name: "Background")
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -77,12 +77,12 @@ class NaviDestinationViewController: UIViewController {
             self.userDefaults.register(defaults: [self.destinationLatitudeKey: self.destinationLatitude])
             self.destinationLongitude = (self.spots[0]?.locate?.longitude)!
             self.userDefaults.register(defaults: [self.destinationLongitudeKey: self.destinationLongitude])
-//            self.firstDetourLatitude = (self.detours[0]?[0]?.locate?.latitude)!
-//            self.userDefaults.register(defaults: [self.firstDetourLatitudeKey: self.firstDetourLatitude])
-//            self.firstDetourLongitude = (self.detours[0]?[0]?.locate?.longitude)!
-//            self.userDefaults.register(defaults: [self.firstDetourLongitudeKey: self.firstDetourLongitude])
+            //self.firstDetourLatitude = (self.detours[0]?[0]?.locate?.latitude)!
+            self.userDefaults.register(defaults: [self.firstDetourLatitudeKey: self.firstDetourLatitude])
+            //self.firstDetourLongitude = (self.detours[0]?[0]?.locate?.longitude)!
+            self.userDefaults.register(defaults: [self.firstDetourLongitudeKey: self.firstDetourLongitude])
             print("-------------end--------------")
-        }
+       }
     }
     
     override func viewDidAppear(_ animated: Bool) {
