@@ -32,7 +32,7 @@ class NaviSpotRegisterViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        naviSpotRegisterPresenter = NaviSpotRegisterPresenter(view: self)
+        naviSpotRegisterPresenter = NaviSpotRegisterPresenter(base64SendProtocol: self)
         photoButton.imageView?.contentMode = .scaleAspectFit
         photoButton.contentHorizontalAlignment = .fill
         photoButton.contentVerticalAlignment = .fill
@@ -92,7 +92,7 @@ extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINav
         // UIImageをbase64に変換する
         let imageData = spotImageView.image?.pngData()
         base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
-        print(naviSpotRegisterPresenter.showBase64())
+        print(naviSpotRegisterPresenter.show())
         // 写真を選ぶビューを引っ込める
         self.dismiss(animated: true)
     }
