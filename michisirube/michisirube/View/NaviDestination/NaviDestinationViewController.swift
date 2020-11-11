@@ -64,7 +64,7 @@ class NaviDestinationViewController: UIViewController {
         dispatchQueue.async {
             self.naviDestinationPresenter.getDetourList(completion: { detour in
                 self.detours = detour
-                print(self.detours[0] as Any)
+                print(self.detours as Any)
                 self.dispatchGroup.leave()
             })
         }
@@ -103,7 +103,7 @@ class NaviDestinationViewController: UIViewController {
         
         //Googleマップに遷移，もしGoogleマップのアプリがインストールされていなければ既存のマップアプリを起動する
         if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
-            urlString = "comgooglemapsurl://?daddr=41.815245844721,140.75453873745+to:\(destinationLatitude),\(destinationLongitude)&directionsmode=walking&zoom=14"
+            urlString = "comgooglemapsurl://?daddr=\(41.779767),\(140.753245)+to:\(destinationLatitude),\(destinationLongitude)&directionsmode=walking&zoom=14"
         } else {
             urlString = "http://maps.apple.com/?daddr=\(destinationLatitude),\(destinationLongitude)&dirflg=w"
         }
