@@ -43,8 +43,10 @@ class NaviDestinationPresenter {
     // サーバから寄り道をもらう
     func getDetourList(completion: @escaping ([[SpotsQuery.Data.Spot.Detour?]?]) -> Void) {
         let emotionTypeNumber = userDefaults.integer(forKey: settingKey)
+        let latitude = userDefaults.double(forKey: settingDeviceLatitudeKey)
+        let longitude = userDefaults.double(forKey: settingDeviceLongitudeKey)
         print("感情の種類の番号：\(emotionTypeNumber)")
-        Network.shared.apollo.fetch(query: SpotsQuery(deviceLatitude: 41.796771, deviceLongitude: 140.757028, worktime: 0, emotion: emotionTypeNumber)) { [weak self] result in
+        Network.shared.apollo.fetch(query: SpotsQuery(deviceLatitude: latitude, deviceLongitude: longitude, worktime: 0, emotion: emotionTypeNumber)) { [weak self] result in
 
             guard self != nil else {
               return
