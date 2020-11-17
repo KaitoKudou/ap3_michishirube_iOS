@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 protocol Base64SendProtocol {
     func sendBase64() -> String // UIImageをbase64に変更してサーバに送る
@@ -33,6 +34,8 @@ class NaviSpotRegisterViewController: UIViewController{
     let settingEmotionSellectNumberKey = "emotionSellect" // UserDafaultを使う時のキー(感情の種類)
     let settingPlaceTextKey = "placeText" // UserDafaultを使う時のキー(場所の名前)
     let settingExplainTextKey = "explainText" // UserDafaultを使う時のキー(場所の詳細)
+    let settingPhotoLatitudeKey = "photoLatitude" // UserDafaultを使う時のキー(写真の緯度)
+    let settingPhotoLongitudeKey = "photoLongitude" // UserDafaultを使う時のキー(写真の緯度)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +90,7 @@ class NaviSpotRegisterViewController: UIViewController{
     }
     
     @IBAction func spotRegisterButton(_ sender: Any) {
-        naviSpotRegisterPresenter.show()
+        naviSpotRegisterPresenter.setSendAddSpotInfomation()
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -95,6 +98,40 @@ class NaviSpotRegisterViewController: UIViewController{
 extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // 写真を選んだ後に呼ばれる処理
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let assetURL = info[.referenceURL] as? URL {
+            let result = PHAsset.fetchAssets(withALAssetURLs: [assetURL], options: nil)
+            let asset = result.firstObject
+            
+            if let asset = asset {
+                asset.requestContentEditingInput(with: nil, completionHandler: { contentEditingInput, info in
+                    let url = contentEditingInput?.fullSizeImageURL
+                    let inputImage = CIImage(contentsOf: url!)!
+                    // CIImage から画像のメタデータのGPSを取得する
+                    if inputImage.properties["{GPS}"] as? Dictionary<String,Any> == nil {
+                        // GPS 情報の取得に失敗した時の処理
+                        print("GPS Faild")
+                    } else {
+                        // GPS 情報の取得に成功した時の処理
+                        let gps = inputImage.properties["{GPS}"] as? Dictionary<String,Any>
+                        var latitude = gps!["Latitude"] as! Double
+                        let latitudeRef = gps!["LatitudeRef"] as! String
+                        var longitude = gps!["Longitude"] as! Double
+                        let longitudeRef = gps!["LongitudeRef"] as! String
+                        if latitudeRef == "S" {
+                            latitude = latitude * -1
+                        }
+                        if longitudeRef == "W" {
+                            longitude = longitude * -1
+                        }
+                        print(latitude)
+                        print(longitude)
+                        self.userDefaults.register(defaults: [self.settingPhotoLatitudeKey: latitude])
+                        self.userDefaults.register(defaults: [self.settingPhotoLongitudeKey: longitude])
+                    }
+                })
+            }
+            
+        }
         // 選択した写真を取得する
         let image = info[.originalImage] as! UIImage
         let resizedImage = image.resized(withPercentage: 0.3)
