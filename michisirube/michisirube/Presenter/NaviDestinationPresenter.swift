@@ -44,8 +44,9 @@ class NaviDestinationPresenter {
         let emotionTypeNumber = userDefaults.integer(forKey: settingKey)
         let latitude = userDefaults.double(forKey: settingDeviceLatitudeKey)
         let longitude = userDefaults.double(forKey: settingDeviceLongitudeKey)
+        let workTime = userDefaults.integer(forKey: settingWorkTimeKey)
         print("感情の種類の番号：\(emotionTypeNumber)")
-        Network.shared.apollo.fetch(query: SpotsQuery(deviceLatitude: latitude, deviceLongitude: longitude, worktime: 0, emotion: emotionTypeNumber)) { [weak self] result in
+        Network.shared.apollo.fetch(query: SpotsQuery(deviceLatitude: latitude, deviceLongitude: longitude, worktime: workTime, emotion: emotionTypeNumber)) { [weak self] result in
 
             guard self != nil else {
               return
