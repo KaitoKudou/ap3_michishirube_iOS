@@ -36,25 +36,20 @@ class NaviSpotRegisterPresenter {
     func sendAddSpotInfomation() {
         let latitude = userDefaults.double(forKey: settingPhotoLatitudeKey)
         let longitude = userDefaults.double(forKey: settingPhotoLongitudeKey)
-        print(latitude)
-        print(longitude)
-        print(imageData)
-        print(placeText)
-        print(emotionSellectNumber)
-        print(explainText)
-//        Network.shared.apollo.perform(mutation: AddSpotMutation(name: placeText, description: explainText, image: "", latitude: latitude, longitude: longitude)){ [weak self] result in
-//
-//            guard self != nil else {
-//              return
-//            }
-//
-//            switch result {
-//            case .success(let graphQLResult):
-//                print([graphQLResult.data?.addSpot])
-//
-//            case .failure(let error):
-//                print("Failure! Error: \(error)")
-//            }
-//        }
+        
+        Network.shared.apollo.perform(mutation: AddSpotMutation(name: placeText, description: explainText, image: imageData, latitude: latitude, longitude: longitude)){ [weak self] result in
+
+            guard self != nil else {
+              return
+            }
+
+            switch result {
+            case .success(let graphQLResult):
+                print([graphQLResult.data?.addSpot])
+
+            case .failure(let error):
+                print("Failure! Error: \(error)")
+            }
+        }
     }
 }
