@@ -16,6 +16,9 @@ class TitleViewController: UIViewController {
     var latitudeNow: String = ""
     // 現在のユーザの経度
     var longitudeNow: String = ""
+    let userDefaults = UserDefaults.standard
+    let settingDeviceLatitudeKey = "deviceLatitude"
+    let settingDeviceLongitudeKey = "deviceLongitude"
     
 
     override func viewDidLoad() {
@@ -44,6 +47,8 @@ class TitleViewController: UIViewController {
         } else {
             print(latitudeNow)
             print(longitudeNow)
+            userDefaults.register(defaults: [settingDeviceLatitudeKey: latitudeNow])
+            userDefaults.register(defaults: [settingDeviceLongitudeKey: longitudeNow])
         }
         
         let storyboard = UIStoryboard(name: "NaviEmotionSelect", bundle: nil)
