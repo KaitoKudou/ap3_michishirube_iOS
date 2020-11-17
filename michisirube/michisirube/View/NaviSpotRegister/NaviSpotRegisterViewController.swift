@@ -134,7 +134,7 @@ extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINav
         }
         // 選択した写真を取得する
         let image = info[.originalImage] as! UIImage
-        let resizedImage = image.resized(withPercentage: 0.3)
+        let resizedImage = image.resized(withPercentage: 0.15)
         // ビューに表示する
         spotImageView.image = resizedImage
         // UIImageをbase64に変換する
