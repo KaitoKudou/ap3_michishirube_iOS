@@ -6,6 +6,7 @@
 //  Copyright © 2020 工藤海斗. All rights reserved.
 //
 
+import Firebase
 import UIKit
 import KeychainSwift
 
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Failure! Error: \(error)")
           }
         }
+        FirebaseApp.configure()
         return true
     }
 
