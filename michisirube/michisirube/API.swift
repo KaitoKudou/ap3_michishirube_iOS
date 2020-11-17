@@ -176,6 +176,182 @@ public final class AddEvaluationMutation: GraphQLMutation {
   }
 }
 
+public final class AddSpotMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation AddSpot($name: String!, $description: String!, $image: String!, $latitude: Float!, $longitude: Float!) {
+      addSpot(name: $name, description: $description, image: $image, latitude: $latitude, longitude: $longitude) {
+        __typename
+        status
+        errors {
+          __typename
+          code
+          message
+          description
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "AddSpot"
+
+  public var name: String
+  public var description: String
+  public var image: String
+  public var latitude: Double
+  public var longitude: Double
+
+  public init(name: String, description: String, image: String, latitude: Double, longitude: Double) {
+    self.name = name
+    self.description = description
+    self.image = image
+    self.latitude = latitude
+    self.longitude = longitude
+  }
+
+  public var variables: GraphQLMap? {
+    return ["name": name, "description": description, "image": image, "latitude": latitude, "longitude": longitude]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("addSpot", arguments: ["name": GraphQLVariable("name"), "description": GraphQLVariable("description"), "image": GraphQLVariable("image"), "latitude": GraphQLVariable("latitude"), "longitude": GraphQLVariable("longitude")], type: .nonNull(.object(AddSpot.selections))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(addSpot: AddSpot) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "addSpot": addSpot.resultMap])
+    }
+
+    public var addSpot: AddSpot {
+      get {
+        return AddSpot(unsafeResultMap: resultMap["addSpot"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "addSpot")
+      }
+    }
+
+    public struct AddSpot: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Result"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("status", type: .nonNull(.scalar(Bool.self))),
+          GraphQLField("errors", type: .list(.object(Error.selections))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(status: Bool, errors: [Error?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Result", "status": status, "errors": errors.flatMap { (value: [Error?]) -> [ResultMap?] in value.map { (value: Error?) -> ResultMap? in value.flatMap { (value: Error) -> ResultMap in value.resultMap } } }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var status: Bool {
+        get {
+          return resultMap["status"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "status")
+        }
+      }
+
+      public var errors: [Error?]? {
+        get {
+          return (resultMap["errors"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Error?] in value.map { (value: ResultMap?) -> Error? in value.flatMap { (value: ResultMap) -> Error in Error(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Error?]) -> [ResultMap?] in value.map { (value: Error?) -> ResultMap? in value.flatMap { (value: Error) -> ResultMap in value.resultMap } } }, forKey: "errors")
+        }
+      }
+
+      public struct Error: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["ERRORS"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("code", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("message", type: .nonNull(.scalar(String.self))),
+            GraphQLField("description", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(code: Int, message: String, description: String) {
+          self.init(unsafeResultMap: ["__typename": "ERRORS", "code": code, "message": message, "description": description])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var code: Int {
+          get {
+            return resultMap["code"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "code")
+          }
+        }
+
+        public var message: String {
+          get {
+            return resultMap["message"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "message")
+          }
+        }
+
+        public var description: String {
+          get {
+            return resultMap["description"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "description")
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class SignupMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
