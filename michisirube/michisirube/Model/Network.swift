@@ -16,7 +16,7 @@ class Network {
         configuration.httpAdditionalHeaders = ["id": "hoge", "pass": "pass"]
         let client = URLSessionClient(sessionConfiguration: configuration, callbackQueue: .none)
 
-        let endpointURL = URL(string: "https://miraikeitai2020-bff.herokuapp.com/query")!
+        let endpointURL = URL(string: "http://192.168.11.3:9020/query")!
         let transport = HTTPNetworkTransport(url: endpointURL, client: client)
         transport.delegate = self
         return ApolloClient(networkTransport: transport)
