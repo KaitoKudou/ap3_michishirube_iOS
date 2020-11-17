@@ -1,0 +1,10 @@
+mutation AddSpot($name: String!, $description: String!, $image: String!, $latitude: Float!, $longitude: Float!){
+  addSpot(name: $name, description: $description, image: $image, latitude: $latitude, longitude: $longitude){
+    status
+    errors{
+      code
+      message
+      description
+    }
+  }
+}
