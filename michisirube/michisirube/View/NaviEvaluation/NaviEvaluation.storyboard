@@ -16,42 +16,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="us6-KK-281">
-                                <rect key="frame" x="147" y="300" width="120" height="120"/>
+                                <rect key="frame" x="147" y="322" width="120" height="120"/>
                                 <state key="normal" image="NaviEvaluation_good"/>
                                 <connections>
                                     <action selector="evaluationGoodButton:" destination="0Ma-PH-SpN" eventType="touchUpInside" id="oNJ-Sn-Qxz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-rQ-RQ1">
-                                <rect key="frame" x="147" y="561" width="120" height="120"/>
+                                <rect key="frame" x="147" y="587" width="120" height="120"/>
                                 <state key="normal" image="NaviEvaluation_bad"/>
                                 <connections>
                                     <action selector="evaluationBadButton:" destination="0Ma-PH-SpN" eventType="touchUpInside" id="BV0-vG-SX0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="気に入らなかった" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-Yh-x4d">
-                                <rect key="frame" x="137.5" y="701" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-Yh-x4d">
+                                <rect key="frame" x="185.5" y="722" width="43" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="気に入った" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXf-VE-tBT">
-                                <rect key="frame" x="163.5" y="440" width="87" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXf-VE-tBT">
+                                <rect key="frame" x="177.5" y="457" width="59.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-aq-DGs">
+                                <rect key="frame" x="20" y="133" width="374" height="154"/>
+                                <string key="text">お疲れ様でした！ 今回の旅はあなたに感動をもたらしたでしょうか？
+目的地が期待通りでしたらGoodを押してくれると嬉しいです！</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CCY-Yh-x4d" firstAttribute="top" secondItem="8KJ-rQ-RQ1" secondAttribute="bottom" constant="20" id="0Wd-Ae-pqE"/>
-                            <constraint firstItem="NXf-VE-tBT" firstAttribute="top" secondItem="us6-KK-281" secondAttribute="bottom" constant="20" id="6yD-YO-lE0"/>
-                            <constraint firstItem="3db-J5-OOa" firstAttribute="bottom" secondItem="CCY-Yh-x4d" secondAttribute="bottom" constant="140" id="FzV-UC-riY"/>
-                            <constraint firstItem="8KJ-rQ-RQ1" firstAttribute="top" secondItem="NXf-VE-tBT" secondAttribute="bottom" constant="100" id="JL7-Er-cvq"/>
+                            <constraint firstItem="CCY-Yh-x4d" firstAttribute="top" secondItem="8KJ-rQ-RQ1" secondAttribute="bottom" constant="15" id="59E-IJ-djg"/>
+                            <constraint firstItem="Iqh-aq-DGs" firstAttribute="top" secondItem="3db-J5-OOa" secondAttribute="top" constant="45" id="Is6-d7-RgN"/>
                             <constraint firstItem="NXf-VE-tBT" firstAttribute="centerX" secondItem="vkO-88-vjb" secondAttribute="centerX" id="Khr-rI-oRi"/>
                             <constraint firstItem="CCY-Yh-x4d" firstAttribute="centerX" secondItem="vkO-88-vjb" secondAttribute="centerX" id="LVk-CW-N2l"/>
                             <constraint firstItem="us6-KK-281" firstAttribute="centerX" secondItem="vkO-88-vjb" secondAttribute="centerX" id="OaW-pb-8JH"/>
+                            <constraint firstItem="3db-J5-OOa" firstAttribute="bottom" secondItem="CCY-Yh-x4d" secondAttribute="bottom" constant="110" id="W59-Vs-Sgz"/>
+                            <constraint firstItem="NXf-VE-tBT" firstAttribute="top" secondItem="us6-KK-281" secondAttribute="bottom" constant="15" id="ak5-Sr-mR7"/>
                             <constraint firstItem="8KJ-rQ-RQ1" firstAttribute="centerX" secondItem="vkO-88-vjb" secondAttribute="centerX" id="oaW-97-EcQ"/>
+                            <constraint firstItem="8KJ-rQ-RQ1" firstAttribute="top" secondItem="NXf-VE-tBT" secondAttribute="bottom" constant="100" id="sab-ne-Viv"/>
+                            <constraint firstItem="Iqh-aq-DGs" firstAttribute="leading" secondItem="3db-J5-OOa" secondAttribute="leading" constant="20" id="tCZ-bq-D3b"/>
+                            <constraint firstItem="3db-J5-OOa" firstAttribute="trailing" secondItem="Iqh-aq-DGs" secondAttribute="trailing" constant="20" id="ukg-Lh-Zmy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3db-J5-OOa"/>
                     </view>
