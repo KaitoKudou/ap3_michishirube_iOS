@@ -8,6 +8,7 @@ target 'michisirube' do
   pod 'KeychainSwift', '~> 19.0'
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
   # Pods for michisirube
 
