@@ -90,7 +90,7 @@ class NaviSpotRegisterViewController: UIViewController{
     }
     
     @IBAction func spotRegisterButton(_ sender: Any) {
-        naviSpotRegisterPresenter.setSendAddSpotInfomation()
+        //naviSpotRegisterPresenter.setSendAddSpotInfomation()
         self.dismiss(animated: true, completion: nil)
     }
 }
