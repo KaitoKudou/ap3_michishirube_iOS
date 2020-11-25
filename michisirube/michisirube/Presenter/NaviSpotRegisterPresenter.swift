@@ -5,8 +5,8 @@
 //  Created by 工藤海斗 on 2020/11/08.
 //
 
+import Firebase
 import FirebaseStorage
-import FirebaseDatabase
 import Foundation
 
 class NaviSpotRegisterPresenter {
@@ -62,12 +62,11 @@ class NaviSpotRegisterPresenter {
                     print(error.debugDescription)
                     return
                 }
-                guard let url = url else { return }
-                print(url)
+                let urlString = url!.absoluteString
+                let addSpotInfomationDic = ["placeText": placeText, "emotionSellectNumber": emotionSellectNumber, "explainText": explainText, "detourImageURL": urlString] as [String : Any]
+                self.ref.childByAutoId().setValue(addSpotInfomationDic)
             }
         }
-        
-        let addSpotInfomationDic = ["placeText": placeText, "emotionSellectNumber": emotionSellectNumber, "explainText": explainText] as [String : Any]
         //sendAddSpotInfomation()
     }
     
