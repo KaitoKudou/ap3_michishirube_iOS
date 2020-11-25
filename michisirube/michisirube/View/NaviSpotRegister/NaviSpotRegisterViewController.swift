@@ -10,6 +10,7 @@ import Photos
 
 protocol Base64SendProtocol {
     func sendBase64() -> String // UIImageをbase64に変更してサーバに送る
+    func sendJpegImageData() -> Data // Firebase Storageに画像を送信
 }
 
 class NaviSpotRegisterViewController: UIViewController{
@@ -36,6 +37,7 @@ class NaviSpotRegisterViewController: UIViewController{
     let settingExplainTextKey = "explainText" // UserDafaultを使う時のキー(場所の詳細)
     let settingPhotoLatitudeKey = "photoLatitude" // UserDafaultを使う時のキー(写真の緯度)
     let settingPhotoLongitudeKey = "photoLongitude" // UserDafaultを使う時のキー(写真の緯度)
+    var imageData: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +92,7 @@ class NaviSpotRegisterViewController: UIViewController{
     }
     
     @IBAction func spotRegisterButton(_ sender: Any) {
-        //naviSpotRegisterPresenter.setSendAddSpotInfomation()
+        naviSpotRegisterPresenter.setSendAddSpotInfomation()
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -138,7 +140,7 @@ extension NaviSpotRegisterViewController: UIImagePickerControllerDelegate, UINav
         // ビューに表示する
         spotImageView.image = resizedImage
         // UIImageをbase64に変換する
-        let imageData = spotImageView.image?.jpegData(compressionQuality: 0.0)
+        imageData = spotImageView.image?.jpegData(compressionQuality: 0.01)
         base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
         // 写真を選ぶビューを引っ込める
         self.dismiss(animated: true)
@@ -176,6 +178,10 @@ extension NaviSpotRegisterViewController: UITextFieldDelegate {
 }
 
 extension NaviSpotRegisterViewController: Base64SendProtocol {
+    func sendJpegImageData() -> Data {
+        return self.imageData!
+    }
+    
     func sendBase64() -> String {
         return self.base64String ?? "nothing"
     }
