@@ -36,6 +36,12 @@ class TitleViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    @IBAction func test(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "NaviSpotInformation", bundle: nil)
+        let naviSpotInformationViewController = storyboard.instantiateViewController(identifier: "NaviSpotInformationViewController") as NaviSpotInformationViewController
+        self.navigationController?.pushViewController(naviSpotInformationViewController, animated: true)
+    }
+    
     @IBAction func NavigationButton(_ sender: Any) {
         // マネージャの設定
         let status = CLLocationManager.authorizationStatus()
