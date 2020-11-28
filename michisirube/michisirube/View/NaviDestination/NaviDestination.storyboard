@@ -16,38 +16,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今のあなたの感情から" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okf-zb-U6g">
-                                <rect key="frame" x="120" y="168" width="174" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="105" y="168" width="204" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目的地を推薦します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDb-sZ-gsk">
-                                <rect key="frame" x="129" y="193" width="156" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="115.5" y="196" width="183.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UA-xC-1az">
-                                <rect key="frame" x="80" y="694" width="49" height="48"/>
-                                <state key="normal" image="NaviDestination_update"/>
-                                <connections>
-                                    <action selector="NaviDestinationUpdate:" destination="6fj-y1-gUx" eventType="touchUpInside" id="9YW-90-igu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6Y-D6-Uri">
-                                <rect key="frame" x="182" y="688" width="177" height="66"/>
-                                <state key="normal" image="NaviDestination_.Decisionpng"/>
-                                <connections>
-                                    <action selector="NaviDestinationDecision:" destination="6fj-y1-gUx" eventType="touchUpInside" id="Knc-tr-2Hh"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZiZ-oj-QNQ">
                                 <rect key="frame" x="55" y="344" width="304" height="208"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="五稜郭" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-oG-Nle">
                                         <rect key="frame" x="8" y="86" width="288" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -68,19 +54,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6Y-D6-Uri">
+                                <rect key="frame" x="87" y="646" width="241" height="108"/>
+                                <state key="normal" image="NaviDestination_.Decisionpng"/>
+                                <connections>
+                                    <action selector="NaviDestinationDecision:" destination="6fj-y1-gUx" eventType="touchUpInside" id="Knc-tr-2Hh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8UA-xC-1az" firstAttribute="leading" secondItem="j2H-N3-hgN" secondAttribute="leading" constant="80" id="OWh-4a-gMp"/>
+                            <constraint firstItem="j6Y-D6-Uri" firstAttribute="centerX" secondItem="wXC-9e-ANn" secondAttribute="centerX" id="BRo-KN-uxN"/>
                             <constraint firstItem="rDb-sZ-gsk" firstAttribute="centerX" secondItem="wXC-9e-ANn" secondAttribute="centerX" id="W6s-6b-FrD"/>
-                            <constraint firstItem="j2H-N3-hgN" firstAttribute="bottom" secondItem="8UA-xC-1az" secondAttribute="bottom" constant="120" id="YF2-gG-EZk"/>
                             <constraint firstItem="rDb-sZ-gsk" firstAttribute="top" secondItem="Okf-zb-U6g" secondAttribute="bottom" constant="4" id="aUz-9l-j1B"/>
                             <constraint firstItem="ZiZ-oj-QNQ" firstAttribute="centerX" secondItem="wXC-9e-ANn" secondAttribute="centerX" id="eOC-PR-GHl"/>
                             <constraint firstItem="Okf-zb-U6g" firstAttribute="centerX" secondItem="wXC-9e-ANn" secondAttribute="centerX" id="hgT-k4-K38"/>
                             <constraint firstItem="ZiZ-oj-QNQ" firstAttribute="centerY" secondItem="wXC-9e-ANn" secondAttribute="centerY" id="pbL-7l-Wgg"/>
                             <constraint firstItem="Okf-zb-U6g" firstAttribute="top" secondItem="j2H-N3-hgN" secondAttribute="top" constant="80" id="qxx-MK-1Td"/>
                             <constraint firstItem="j2H-N3-hgN" firstAttribute="bottom" secondItem="j6Y-D6-Uri" secondAttribute="bottom" constant="108" id="sMC-nV-wdc"/>
-                            <constraint firstItem="j2H-N3-hgN" firstAttribute="trailing" secondItem="j6Y-D6-Uri" secondAttribute="trailing" constant="55" id="x3T-Ed-bMR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j2H-N3-hgN"/>
                     </view>
@@ -115,6 +106,5 @@
     </scenes>
     <resources>
         <image name="NaviDestination_.Decisionpng" width="177" height="66"/>
-        <image name="NaviDestination_update" width="49" height="48"/>
     </resources>
 </document>
