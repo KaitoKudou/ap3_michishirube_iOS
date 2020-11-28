@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,8 +33,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="広い函館の海" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-rR-mEz">
-                                <rect key="frame" x="116" y="468" width="182" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="広い函館の海" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-rR-mEz">
+                                <rect key="frame" x="111.5" y="468" width="182" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -72,20 +73,20 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="uRK-1K-MZn"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="icX-5c-huc" firstAttribute="top" secondItem="uRK-1K-MZn" secondAttribute="top" constant="70" id="9Gq-tV-yeh"/>
                             <constraint firstItem="icX-5c-huc" firstAttribute="leading" secondItem="uRK-1K-MZn" secondAttribute="leading" constant="40" id="APO-ku-Tsi"/>
                             <constraint firstItem="uRK-1K-MZn" firstAttribute="trailing" secondItem="icX-5c-huc" secondAttribute="trailing" constant="40" id="Z47-Y0-MzL"/>
                             <constraint firstItem="6bi-L7-jyM" firstAttribute="centerX" secondItem="mWB-g8-Jv4" secondAttribute="centerX" id="eJi-ku-lH9"/>
-                            <constraint firstItem="Jad-rR-mEz" firstAttribute="centerX" secondItem="mWB-g8-Jv4" secondAttribute="centerX" id="egD-x7-3n9"/>
+                            <constraint firstItem="Jad-rR-mEz" firstAttribute="centerX" secondItem="mWB-g8-Jv4" secondAttribute="centerX" constant="-4.5" id="egD-x7-3n9"/>
                             <constraint firstItem="icX-5c-huc" firstAttribute="centerX" secondItem="mWB-g8-Jv4" secondAttribute="centerX" id="gjz-cv-g38"/>
                             <constraint firstItem="uRK-1K-MZn" firstAttribute="bottom" secondItem="6bi-L7-jyM" secondAttribute="bottom" constant="50" id="h5R-6c-LGk"/>
-                            <constraint firstItem="D8I-vN-gaB" firstAttribute="top" secondItem="Jad-rR-mEz" secondAttribute="bottom" constant="50" id="ndz-HZ-fIv"/>
+                            <constraint firstItem="D8I-vN-gaB" firstAttribute="top" secondItem="Jad-rR-mEz" secondAttribute="bottom" constant="34" id="ndz-HZ-fIv"/>
                             <constraint firstItem="icX-5c-huc" firstAttribute="top" secondItem="uRK-1K-MZn" secondAttribute="top" constant="70" id="xRc-Pa-3it"/>
                             <constraint firstItem="Jad-rR-mEz" firstAttribute="top" secondItem="icX-5c-huc" secondAttribute="bottom" constant="50" id="z6Y-q3-QhE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="uRK-1K-MZn"/>
                     </view>
                     <navigationItem key="navigationItem" id="1gb-iy-6xC"/>
                 </viewController>
@@ -116,5 +117,8 @@
     <resources>
         <image name="EvaluatePageButton" width="182" height="60"/>
         <image name="Ocean" width="4032" height="3024"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
