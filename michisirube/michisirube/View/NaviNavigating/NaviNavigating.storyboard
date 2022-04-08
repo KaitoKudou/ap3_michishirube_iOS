@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tHi-i6-k6f">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navi Navigating View Controller-->
+        <scene sceneID="G60-Bi-1Au">
+            <objects>
+                <viewController storyboardIdentifier="NaviNavigatingViewController" id="IgH-7c-ZBm" customClass="NaviNavigatingViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eSu-WD-006">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryl-iV-qzi">
+                                <rect key="frame" x="192" y="712" width="30" height="30"/>
+                                <state key="normal" title="test"/>
+                                <connections>
+                                    <action selector="test:" destination="IgH-7c-ZBm" eventType="touchUpInside" id="ofe-Jd-dxO"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ra7-4t-vhA">
+                                <rect key="frame" x="70" y="346" width="274" height="204"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="案内中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ern-sO-Om9">
+                                        <rect key="frame" x="93" y="84" width="91" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="GJB-RL-xJx"/>
+                                    <constraint firstAttribute="width" constant="274" id="Uoi-QM-emd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nNU-hw-03R" firstAttribute="bottom" secondItem="Ryl-iV-qzi" secondAttribute="bottom" constant="120" id="6HY-TX-7RD"/>
+                            <constraint firstItem="Ra7-4t-vhA" firstAttribute="centerY" secondItem="eSu-WD-006" secondAttribute="centerY" id="B8n-HH-J5r"/>
+                            <constraint firstItem="nNU-hw-03R" firstAttribute="trailing" secondItem="Ryl-iV-qzi" secondAttribute="trailing" constant="192" id="DE7-HQ-A0B"/>
+                            <constraint firstItem="nNU-hw-03R" firstAttribute="trailing" secondItem="Ra7-4t-vhA" secondAttribute="trailing" constant="70" id="DQM-Nv-C55"/>
+                            <constraint firstItem="Ra7-4t-vhA" firstAttribute="centerX" secondItem="eSu-WD-006" secondAttribute="centerX" id="TWr-gk-PWb"/>
+                            <constraint firstItem="Ra7-4t-vhA" firstAttribute="leading" secondItem="nNU-hw-03R" secondAttribute="leading" constant="70" id="bEb-MK-lLf"/>
+                            <constraint firstItem="Ryl-iV-qzi" firstAttribute="leading" secondItem="nNU-hw-03R" secondAttribute="leading" constant="192" id="yup-Rc-tjt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nNU-hw-03R"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LfL-UJ-Oeu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="og2-Yx-mpS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942.02898550724649" y="95.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lFL-kn-iOJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tHi-i6-k6f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hf1-bv-xfx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IgH-7c-ZBm" kind="relationship" relationship="rootViewController" id="Y1s-Uq-ivW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCT-cR-4w6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="95.758928571428569"/>
+        </scene>
+    </scenes>
+</document>

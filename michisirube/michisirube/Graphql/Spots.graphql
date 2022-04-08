@@ -1,0 +1,27 @@
+query Spots($deviceLatitude: Float!, $deviceLongitude: Float!, $worktime: Int!, $emotion: Int!) {
+  spots(latitude: $deviceLatitude, longitude: $deviceLongitude, worktime: $worktime, emotion: $emotion) {
+    spot {
+      id
+      name
+      locate {
+        latitude
+        longitude
+      }
+    }
+    detour {
+      id
+      name
+      image
+      Description
+      locate {
+        latitude
+        longitude
+      }
+    }
+    errors{
+      code
+      message
+      description
+    }
+  }
+}

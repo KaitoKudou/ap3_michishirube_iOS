@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MYo-gO-2i6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NaviDestination View Controller Scene-->
+        <scene sceneID="taP-PQ-gHl">
+            <objects>
+                <viewController storyboardIdentifier="NaviDestinationViewController" title="NaviDestination View Controller Scene" id="6fj-y1-gUx" customClass="NaviDestinationViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wXC-9e-ANn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今のあなたの感情から" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okf-zb-U6g">
+                                <rect key="frame" x="105" y="168" width="204" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目的地を推薦します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDb-sZ-gsk">
+                                <rect key="frame" x="115.5" y="196" width="183.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZiZ-oj-QNQ">
+                                <rect key="frame" x="55" y="344" width="304" height="208"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="五稜郭" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-oG-Nle">
+                                        <rect key="frame" x="8" y="86" width="288" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="208" id="Spr-kn-395"/>
+                                    <constraint firstAttribute="width" constant="304" id="XYg-MJ-PG9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6Y-D6-Uri">
+                                <rect key="frame" x="87" y="646" width="241" height="108"/>
+                                <state key="normal" image="NaviDestination_.Decisionpng"/>
+                                <connections>
+                                    <action selector="NaviDestinationDecision:" destination="6fj-y1-gUx" eventType="touchUpInside" id="Knc-tr-2Hh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j6Y-D6-Uri" firstAttribute="centerX" secondItem="wXC-9e-ANn" secondAttribute="centerX" id="BRo-KN-uxN"/>
+                            <constraint firstItem="rDb-sZ-gsk" firstAttribute="centerX" secondItem="wXC-9e-ANn" secondAttribute="centerX" id="W6s-6b-FrD"/>
+                            <constraint firstItem="rDb-sZ-gsk" firstAttribute="top" secondItem="Okf-zb-U6g" secondAttribute="bottom" constant="4" id="aUz-9l-j1B"/>
+                            <constraint firstItem="ZiZ-oj-QNQ" firstAttribute="centerX" secondItem="wXC-9e-ANn" secondAttribute="centerX" id="eOC-PR-GHl"/>
+                            <constraint firstItem="Okf-zb-U6g" firstAttribute="centerX" secondItem="wXC-9e-ANn" secondAttribute="centerX" id="hgT-k4-K38"/>
+                            <constraint firstItem="ZiZ-oj-QNQ" firstAttribute="centerY" secondItem="wXC-9e-ANn" secondAttribute="centerY" id="pbL-7l-Wgg"/>
+                            <constraint firstItem="Okf-zb-U6g" firstAttribute="top" secondItem="j2H-N3-hgN" secondAttribute="top" constant="80" id="qxx-MK-1Td"/>
+                            <constraint firstItem="j2H-N3-hgN" firstAttribute="bottom" secondItem="j6Y-D6-Uri" secondAttribute="bottom" constant="108" id="sMC-nV-wdc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="j2H-N3-hgN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xIC-hA-WyI"/>
+                    <connections>
+                        <outlet property="destinationLabel" destination="fOp-oG-Nle" id="qGB-Nw-4jr"/>
+                        <outlet property="destinationView" destination="ZiZ-oj-QNQ" id="x5q-rN-hY6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvw-tC-Rsj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942.02898550724649" y="81.696428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KuH-VL-X9J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MYo-gO-2i6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FDG-VO-GtH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6fj-y1-gUx" kind="relationship" relationship="rootViewController" id="dhs-wS-I8b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oS7-Kb-kys" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NaviDestination_.Decisionpng" width="177" height="66"/>
+    </resources>
+</document>

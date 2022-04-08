@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navi Spot Information View Controller-->
+        <scene sceneID="woo-pC-nK8">
+            <objects>
+                <viewController storyboardIdentifier="NaviSpotInformationViewController" id="1tE-mX-tVU" customClass="NaviSpotInformationViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mWB-g8-Jv4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ocean" translatesAutoresizingMaskIntoConstraints="NO" id="icX-5c-huc">
+                                <rect key="frame" x="40" y="158" width="334" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="qUg-KG-b5g"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="広い函館の海" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-rR-mEz">
+                                <rect key="frame" x="111.5" y="468" width="182" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="近くに函館山が見える海。波がない日には水平線がはっきり見ることができ，海がどこまでも続いているように見える。浜辺にも行くことができる。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D8I-vN-gaB">
+                                <rect key="frame" x="31" y="541" width="353" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-L7-jyM">
+                                <rect key="frame" x="116" y="752" width="182" height="60"/>
+                                <state key="normal" image="EvaluatePageButton"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="evaluateButton:" destination="4eQ-Un-CjH" eventType="touchUpInside" id="xcn-Yn-nyD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uRK-1K-MZn"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="icX-5c-huc" firstAttribute="top" secondItem="uRK-1K-MZn" secondAttribute="top" constant="70" id="9Gq-tV-yeh"/>
+                            <constraint firstItem="icX-5c-huc" firstAttribute="leading" secondItem="uRK-1K-MZn" secondAttribute="leading" constant="40" id="APO-ku-Tsi"/>
+                            <constraint firstItem="uRK-1K-MZn" firstAttribute="trailing" secondItem="icX-5c-huc" secondAttribute="trailing" constant="40" id="Z47-Y0-MzL"/>
+                            <constraint firstItem="6bi-L7-jyM" firstAttribute="centerX" secondItem="mWB-g8-Jv4" secondAttribute="centerX" id="eJi-ku-lH9"/>
+                            <constraint firstItem="Jad-rR-mEz" firstAttribute="centerX" secondItem="mWB-g8-Jv4" secondAttribute="centerX" constant="-4.5" id="egD-x7-3n9"/>
+                            <constraint firstItem="icX-5c-huc" firstAttribute="centerX" secondItem="mWB-g8-Jv4" secondAttribute="centerX" id="gjz-cv-g38"/>
+                            <constraint firstItem="uRK-1K-MZn" firstAttribute="bottom" secondItem="6bi-L7-jyM" secondAttribute="bottom" constant="50" id="h5R-6c-LGk"/>
+                            <constraint firstItem="D8I-vN-gaB" firstAttribute="top" secondItem="Jad-rR-mEz" secondAttribute="bottom" constant="34" id="ndz-HZ-fIv"/>
+                            <constraint firstItem="icX-5c-huc" firstAttribute="top" secondItem="uRK-1K-MZn" secondAttribute="top" constant="70" id="xRc-Pa-3it"/>
+                            <constraint firstItem="Jad-rR-mEz" firstAttribute="top" secondItem="icX-5c-huc" secondAttribute="bottom" constant="50" id="z6Y-q3-QhE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1gb-iy-6xC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RoA-O4-Cwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4eQ-Un-CjH" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="950.72463768115949" y="159.375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lAb-zz-wFV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vhu-js-Xtz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="25d-Hh-n4I">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1tE-mX-tVU" kind="relationship" relationship="rootViewController" id="cBT-0R-19I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HaV-do-9zt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="159.375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="EvaluatePageButton" width="182" height="60"/>
+        <image name="Ocean" width="4032" height="3024"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

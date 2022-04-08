@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WVn-6e-2h2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navi Time Select View Controller-->
+        <scene sceneID="bYB-vZ-5VF">
+            <objects>
+                <viewController storyboardIdentifier="NaviTimeSelectViewController" id="jQr-vK-fH5" customClass="NaviTimeSelectViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q42-jG-8FG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="10" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nR5-ig-7QG">
+                                <rect key="frame" x="47" y="292" width="320" height="312"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky8-QU-MXC">
+                                <rect key="frame" x="150.5" y="714" width="113" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aGp-q6-mtP"/>
+                                </constraints>
+                                <state key="normal" image="TimeSelect"/>
+                                <connections>
+                                    <action selector="NaviTimeSelectDecision:" destination="jQr-vK-fH5" eventType="touchUpInside" id="EoE-Xj-PKY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所要時間を設定してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h9-3n-uPW">
+                                <rect key="frame" x="74.5" y="168" width="265" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ky8-QU-MXC" firstAttribute="top" secondItem="nR5-ig-7QG" secondAttribute="bottom" constant="110" id="1he-fV-1H1"/>
+                            <constraint firstItem="nR5-ig-7QG" firstAttribute="top" secondItem="5h9-3n-uPW" secondAttribute="bottom" constant="100" id="I23-c0-YBC"/>
+                            <constraint firstItem="nR5-ig-7QG" firstAttribute="centerY" secondItem="q42-jG-8FG" secondAttribute="centerY" id="Nyb-uI-Faw"/>
+                            <constraint firstItem="nR5-ig-7QG" firstAttribute="centerX" secondItem="q42-jG-8FG" secondAttribute="centerX" id="OYl-ZG-DKe"/>
+                            <constraint firstItem="5h9-3n-uPW" firstAttribute="top" secondItem="bLz-JO-WAV" secondAttribute="top" constant="80" id="RDj-p0-Aih"/>
+                            <constraint firstItem="5h9-3n-uPW" firstAttribute="centerX" secondItem="q42-jG-8FG" secondAttribute="centerX" id="VB0-FV-r3Q"/>
+                            <constraint firstItem="ky8-QU-MXC" firstAttribute="centerX" secondItem="q42-jG-8FG" secondAttribute="centerX" id="hbK-sI-BkG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bLz-JO-WAV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KlU-mE-Rei"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="5h9-3n-uPW" id="TW1-Jj-Ae5"/>
+                        <outlet property="timeRequiredPicker" destination="nR5-ig-7QG" id="00W-zP-Dug"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBw-zg-Ybv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963.76811594202911" y="71.651785714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NyO-V1-HUP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WVn-6e-2h2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xc3-4a-Q4r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jQr-vK-fH5" kind="relationship" relationship="rootViewController" id="VAw-ha-2p4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1m-7Y-8Fs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.623188405797109" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="TimeSelect" width="113" height="60"/>
+    </resources>
+</document>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1h7-7M-QQO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navi Emotion Size View Controller-->
+        <scene sceneID="jVG-We-2Eg">
+            <objects>
+                <viewController storyboardIdentifier="NaviEmotionSizeViewController" id="lxD-Ou-FmY" customClass="NaviEmotionSizeViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gwe-5T-80X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選択した感情の大きさを教えてください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqW-F1-ruj">
+                                <rect key="frame" x="51" y="198.5" width="312" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="穏やか" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRQ-h4-DCV">
+                                <rect key="frame" x="169" y="289.5" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="Av8-qP-RZ9">
+                                <rect key="frame" x="83" y="447.5" width="248" height="1"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NX8-f9-BRq">
+                                <rect key="frame" x="150.5" y="596.5" width="113" height="60"/>
+                                <state key="normal" image="TimeSelect"/>
+                                <connections>
+                                    <action selector="emoionSizeDecision:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="mMJ-nB-Cuv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFa-aa-FJN">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <state key="normal" image="EmotionBigButton"/>
+                                <connections>
+                                    <action selector="emotionSizeMediumButton:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="eDw-gb-wji"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-ne-2RQ">
+                                <rect key="frame" x="75" y="437" width="13" height="22"/>
+                                <state key="normal" image="EmotionSmallButton"/>
+                                <connections>
+                                    <action selector="emotionSizeSmallButton:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="ZHG-bU-yTm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrQ-wc-bzw">
+                                <rect key="frame" x="326" y="437" width="13" height="22"/>
+                                <state key="normal" image="EmotionSmallButton"/>
+                                <connections>
+                                    <action selector="emotionSizeLargeButton:" destination="lxD-Ou-FmY" eventType="touchUpInside" id="2JF-O1-KHK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJG-BN-Stt">
+                                <rect key="frame" x="73" y="475" width="18" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agw-js-gOP">
+                                <rect key="frame" x="323" y="475" width="18" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Av8-qP-RZ9" firstAttribute="centerY" secondItem="gwe-5T-80X" secondAttribute="centerY" id="8qj-Rl-vNE"/>
+                            <constraint firstItem="uFa-aa-FJN" firstAttribute="centerX" secondItem="gwe-5T-80X" secondAttribute="centerX" id="BJq-zo-fgc"/>
+                            <constraint firstItem="FJG-BN-Stt" firstAttribute="top" secondItem="Ydd-ne-2RQ" secondAttribute="bottom" constant="16" id="Ko8-fG-kb3"/>
+                            <constraint firstItem="uFa-aa-FJN" firstAttribute="centerY" secondItem="gwe-5T-80X" secondAttribute="centerY" id="LBl-6j-KlZ"/>
+                            <constraint firstItem="cRQ-h4-DCV" firstAttribute="top" secondItem="cqW-F1-ruj" secondAttribute="bottom" constant="70" id="Nvk-NM-bQT"/>
+                            <constraint firstItem="TrQ-wc-bzw" firstAttribute="centerY" secondItem="gwe-5T-80X" secondAttribute="centerY" id="PPl-cl-JVe"/>
+                            <constraint firstItem="G8m-5l-r1m" firstAttribute="trailing" secondItem="agw-js-gOP" secondAttribute="trailing" constant="73" id="Qht-Zd-WgF"/>
+                            <constraint firstItem="Ydd-ne-2RQ" firstAttribute="leading" secondItem="G8m-5l-r1m" secondAttribute="leading" constant="75" id="S1o-vC-jhn"/>
+                            <constraint firstItem="NX8-f9-BRq" firstAttribute="top" secondItem="uFa-aa-FJN" secondAttribute="bottom" constant="130" id="THk-vp-wHn"/>
+                            <constraint firstItem="agw-js-gOP" firstAttribute="top" secondItem="TrQ-wc-bzw" secondAttribute="bottom" constant="16" id="ZDn-OG-DLg"/>
+                            <constraint firstItem="G8m-5l-r1m" firstAttribute="trailing" secondItem="TrQ-wc-bzw" secondAttribute="trailing" constant="75" id="eFX-a9-XVA"/>
+                            <constraint firstItem="Av8-qP-RZ9" firstAttribute="centerX" secondItem="gwe-5T-80X" secondAttribute="centerX" id="fF6-0x-sji"/>
+                            <constraint firstItem="NX8-f9-BRq" firstAttribute="centerX" secondItem="gwe-5T-80X" secondAttribute="centerX" id="iXS-nd-Yzp"/>
+                            <constraint firstItem="Ydd-ne-2RQ" firstAttribute="centerY" secondItem="gwe-5T-80X" secondAttribute="centerY" id="jCR-aA-n1g"/>
+                            <constraint firstItem="cRQ-h4-DCV" firstAttribute="centerX" secondItem="gwe-5T-80X" secondAttribute="centerX" id="qPu-wl-Wxd"/>
+                            <constraint firstItem="cqW-F1-ruj" firstAttribute="centerX" secondItem="gwe-5T-80X" secondAttribute="centerX" id="rmL-79-x8d"/>
+                            <constraint firstItem="uFa-aa-FJN" firstAttribute="top" secondItem="cRQ-h4-DCV" secondAttribute="bottom" constant="110" id="tgO-xa-sUU"/>
+                            <constraint firstItem="FJG-BN-Stt" firstAttribute="leading" secondItem="G8m-5l-r1m" secondAttribute="leading" constant="73" id="xTY-ja-sWX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G8m-5l-r1m"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FPP-hK-uMi"/>
+                    <connections>
+                        <outlet property="emotionSizeLargeButton" destination="TrQ-wc-bzw" id="iCO-Ne-r1O"/>
+                        <outlet property="emotionSizeMediumButton" destination="uFa-aa-FJN" id="cRG-Cx-7lG"/>
+                        <outlet property="emotionSizeSmallButton" destination="Ydd-ne-2RQ" id="N34-rk-UgV"/>
+                        <outlet property="emotionType" destination="cRQ-h4-DCV" id="irh-hZ-OYO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8DG-pO-pJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.11594202898561" y="140.625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UCY-wP-A0S">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1h7-7M-QQO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aSQ-g7-YDN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lxD-Ou-FmY" kind="relationship" relationship="rootViewController" id="4m1-VL-FUJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JTc-Ar-IJw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="140.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="EmotionBigButton" width="37" height="37"/>
+        <image name="EmotionSmallButton" width="13" height="13"/>
+        <image name="Line" width="248" height="1"/>
+        <image name="TimeSelect" width="113" height="60"/>
+    </resources>
+</document>

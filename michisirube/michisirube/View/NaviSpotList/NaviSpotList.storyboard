@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W2i-fe-3Je">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navi Spot List View Controller-->
+        <scene sceneID="38b-7t-Nre">
+            <objects>
+                <viewController storyboardIdentifier="NaviSpotListViewController" id="XTy-uV-qaR" customClass="NaviSpotListViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LcQ-W7-zQR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-iP-oyZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="odm-4g-OqS" kind="embed" id="vfz-zv-p6T"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUv-01-ZkJ">
+                                <rect key="frame" x="304" y="772" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="lMv-t9-UEf"/>
+                                    <constraint firstAttribute="height" constant="90" id="m2Y-4g-RqJ"/>
+                                </constraints>
+                                <state key="normal" image="AddList"/>
+                                <connections>
+                                    <action selector="spotRegisterScreenTransitionButton:" destination="XTy-uV-qaR" eventType="touchUpInside" id="QRv-1M-BX3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vm7-iP-oyZ" firstAttribute="leading" secondItem="6rm-e4-0Ob" secondAttribute="leading" id="14r-Ji-zRU"/>
+                            <constraint firstItem="vm7-iP-oyZ" firstAttribute="trailing" secondItem="6rm-e4-0Ob" secondAttribute="trailing" id="90o-xT-I9J"/>
+                            <constraint firstItem="6rm-e4-0Ob" firstAttribute="trailing" secondItem="nUv-01-ZkJ" secondAttribute="trailing" constant="20" id="Kaq-ue-IBZ"/>
+                            <constraint firstItem="vm7-iP-oyZ" firstAttribute="top" secondItem="6rm-e4-0Ob" secondAttribute="top" id="O3m-92-T5r"/>
+                            <constraint firstItem="nUv-01-ZkJ" firstAttribute="bottom" secondItem="6rm-e4-0Ob" secondAttribute="bottom" id="YW1-ED-Qap"/>
+                            <constraint firstAttribute="bottom" secondItem="vm7-iP-oyZ" secondAttribute="bottom" id="m2u-SK-C4k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6rm-e4-0Ob"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Om-XV-akV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T31-Ys-Iht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852.17391304347836" y="43.526785714285715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d5Q-dK-cYE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W2i-fe-3Je" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tam-0H-3l1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XTy-uV-qaR" kind="relationship" relationship="rootViewController" id="X9w-Ak-04h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lV1-b0-m4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="43.526785714285715"/>
+        </scene>
+        <!--Show Navi Spot View Controller-->
+        <scene sceneID="FoF-MJ-QlK">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="odm-4g-OqS" customClass="ShowNaviSpotViewController" customModule="michisirube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="waA-xj-35j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HlT-Bi-IN5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="764"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HlT-Bi-IN5" firstAttribute="leading" secondItem="sEZ-MZ-dSl" secondAttribute="leading" id="JOm-G8-X61"/>
+                            <constraint firstItem="HlT-Bi-IN5" firstAttribute="top" secondItem="sEZ-MZ-dSl" secondAttribute="top" id="PGE-B3-9P5"/>
+                            <constraint firstItem="HlT-Bi-IN5" firstAttribute="bottom" secondItem="sEZ-MZ-dSl" secondAttribute="bottom" id="ZUD-xe-QSI"/>
+                            <constraint firstItem="HlT-Bi-IN5" firstAttribute="trailing" secondItem="sEZ-MZ-dSl" secondAttribute="trailing" id="lXT-T8-lNM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sEZ-MZ-dSl"/>
+                    </view>
+                    <connections>
+                        <outlet property="naviSpotTableView" destination="HlT-Bi-IN5" id="Ewm-Qt-MCU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="umR-KS-l7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1850.7246376811595" y="43.526785714285715"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AddList" width="91" height="91"/>
+    </resources>
+</document>
